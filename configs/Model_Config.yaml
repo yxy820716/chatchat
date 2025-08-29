@@ -8,15 +8,6 @@ OPENAI_API_KEY :
   "laob"
 
 
-# OPENAI_MODEL_NAME : 
-#   "qwen-max"
-# OPENAI_BASE_URL : 
-#   "https://dashscope.aliyuncs.com/compatible-mode/v1"
-# OPENAI_API_KEY : 
-#   "sk-e5d2bc1f146e44ebbf274905cea0f7da"
-
-
-
 
 EMBEDDING_MODEL :
   "mxbai-embed-large:latest"
