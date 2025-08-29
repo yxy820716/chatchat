@@ -4,8 +4,11 @@ OPENAI_MODEL_NAME :
   "gpt-oss:120b"
 OPENAI_BASE_URL : 
   "http://10.11.150.143:11434/v1"
-OPENAI_API_KEY : 
+OPENAI_API_KEY :
   "laob"
+
+TRANSLATE_CHUNK_LEN :
+  1000
 
 
 
