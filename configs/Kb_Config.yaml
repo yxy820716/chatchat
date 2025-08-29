@@ -1,0 +1,9 @@
+
+KB_PATH : 
+  "./dataset/knowbase/"
+
+CHUNK_SIZE :
+  512
+
+TOP-K :
+  5

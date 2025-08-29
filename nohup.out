@@ -1,0 +1,1342 @@
+/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/paddle/utils/cpp_extension/extension_utils.py:711: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-DocBlockLayout', None)[0m
+[32mUsing official model (PP-DocBlockLayout), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-DocLayout_plus-L', None)[0m
+[32mUsing official model (PP-DocLayout_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_table_cls', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_table_cls), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANeXt_wired', None)[0m
+[32mUsing official model (SLANeXt_wired), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANet_plus', None)[0m
+[32mUsing official model (SLANet_plus), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wired_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wired_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wireless_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wireless_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-FormulaNet_plus-L', None)[0m
+[32mUsing official model (PP-FormulaNet_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     Started server process [4169854]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO:     10.11.15.3:44682 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44686 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44940 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44948 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49818 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53510 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40108 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49798 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49800 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53444 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53452 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53562 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53564 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56022 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56026 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56388 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56390 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56396 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56400 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56404 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56410 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56414 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60730 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60734 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60738 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60740 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60742 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33280 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33284 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33286 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33306 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33308 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33332 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33342 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33360 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33376 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33390 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33392 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33394 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33396 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33400 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40070 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40072 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40104 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40138 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46566 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46568 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53470 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53472 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55380 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55382 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55470 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55472 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58074 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58076 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:59348 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60592 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60594 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60598 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60602 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60638 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60644 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46668 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46670 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46690 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46692 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52944 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52946 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52954 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53288 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55404 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55406 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55524 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55532 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55534 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55542 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55544 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55556 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%96%B0%E5%A2%9E%E6%B5%8B%E8%AF%95 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55576 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55598 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%96%B0%E5%A2%9E%E6%B5%8B%E8%AF%95 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55600 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55602 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55618 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55620 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%96%B0%E5%A2%9E%E6%B5%8B%E8%AF%95 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55636 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55640 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40030 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40032 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40146 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40150 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40324 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56166 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56168 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49828 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49830 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49832 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49880 - "DELETE /kb/remove-kb HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56020 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56022 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56036 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=ojbk HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56072 - "DELETE /kb/remove-kb HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60304 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60306 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60320 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60380 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E6%88%91%E6%98%AF%E7%86%8F%E8%8D%AF HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33752 - "DELETE /kb/remove-kb HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33754 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33756 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37814 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37816 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39966 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39968 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40102 - "POST /kb/create HTTP/1.1" 201 Created
+INFO:     10.11.15.3:40182 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40188 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40236 - "POST /kb/create HTTP/1.1" 201 Created
+INFO:     10.11.15.3:40238 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40244 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40014 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40016 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40114 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40116 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40278 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40280 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44190 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44192 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46550 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46554 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56758 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56760 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56810 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56846 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56980 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56982 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:59854 - "POST /kb/create HTTP/1.1" 201 Created
+INFO:     10.11.15.3:59856 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:59858 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60640 - "POST /kb/create HTTP/1.1" 201 Created
+INFO:     10.11.15.3:60642 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60644 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60658 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60668 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60672 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60682 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60690 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60692 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33428 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37784 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:38298 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39190 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39194 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34064 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34066 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34312 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34324 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34328 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34336 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34344 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34346 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39204 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39978 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40018 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40030 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40322 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55502 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55980 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56018 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56022 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56042 - "DELETE /kb/remove-kb HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56044 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56046 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39538 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39542 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39546 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39888 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40118 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52350 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52352 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52402 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52404 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34002 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34026 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34034 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43096 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43100 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43120 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43126 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60610 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60612 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60636 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60638 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33394 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33398 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34176 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34178 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40300 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40306 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56418 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56420 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     192.168.17.65:64624 - "POST /kb/create HTTP/1.1" 201 Created
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52012 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52094 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52096 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33872 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33874 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52008 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34172 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34178 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40284 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40286 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55906 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55908 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56592 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56602 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56620 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56622 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44904 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44908 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53292 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53294 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40458 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40460 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43090 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43092 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46608 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46610 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53282 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53284 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39926 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39928 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40320 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40322 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49952 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49956 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35282 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35296 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40226 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40228 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49806 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49808 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52264 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52266 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40208 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40210 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56024 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56026 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33582 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33584 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33884 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33886 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35218 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:36194 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39928 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39932 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40056 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40060 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43082 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43084 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52286 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52288 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55998 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56002 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56144 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56146 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34232 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34234 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37858 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37860 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39976 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39978 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40158 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40160 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40314 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40316 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49668 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49670 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49912 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49914 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49924 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49926 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40118 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40120 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40232 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40234 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42262 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42266 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44200 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44202 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39020 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39022 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39908 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39912 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40426 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40428 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40716 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40718 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42342 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42346 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48680 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48684 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58966 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58970 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60620 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60622 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:38302 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:38304 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40078 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40080 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40108 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40110 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40212 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40214 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53270 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53272 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40010 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40012 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40056 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40058 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43080 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43082 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:45000 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:45002 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49690 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49692 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53340 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55246 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44162 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44166 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46768 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46772 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53372 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53374 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35464 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35466 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37796 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37798 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40552 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40554 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53464 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_eb35718d4ce54fc29fbe9860fce2a1e3.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_eb35718d4ce54fc29fbe9860fce2a1e3.pdf using filter : writer_pdf_Export
+INFO:     10.11.15.3:55482 - "POST /kb/add HTTP/1.1" 500 Internal Server Error
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版 (2)_264cc0e9edef463b9688b1887f9074c1.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版 (2)_264cc0e9edef463b9688b1887f9074c1.pdf using filter : writer_pdf_Export
+INFO:     192.168.17.65:56197 - "POST /kb/add HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53314 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53316 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:38324 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:38326 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40206 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40208 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40250 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40252 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49780 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49782 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49828 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49830 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52006 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/paddle/utils/cpp_extension/extension_utils.py:711: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-DocBlockLayout', None)[0m
+[32mUsing official model (PP-DocBlockLayout), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-DocLayout_plus-L', None)[0m
+[32mUsing official model (PP-DocLayout_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_table_cls', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_table_cls), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANeXt_wired', None)[0m
+[32mUsing official model (SLANeXt_wired), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANet_plus', None)[0m
+[32mUsing official model (SLANet_plus), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wired_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wired_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wireless_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wireless_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-FormulaNet_plus-L', None)[0m
+[32mUsing official model (PP-FormulaNet_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     Started server process [465893]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO:     10.11.15.3:55410 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55448 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_3b7df0cae4834ff4b8162b7f84a86167.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_3b7df0cae4834ff4b8162b7f84a86167.pdf using filter : writer_pdf_Export
+[32mCreating model: ('PP-LCNet_x1_0_doc_ori', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_doc_ori), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_textline_ori), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     10.11.15.3:55534 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56344 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49828 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49830 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49850 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49860 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49934 - "POST /kb/add HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:52380 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52382 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52426 - "POST /kb/add HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:53340 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53342 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33738 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33740 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33782 - "POST /kb/add HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:53342 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53344 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39904 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39912 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44194 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44196 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:45290 - "POST /kb/add HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:49752 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49754 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /kb/add HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:56656 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56658 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_225ee8c71e52476397edf75c67c50cbb.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_225ee8c71e52476397edf75c67c50cbb.pdf using filter : writer_pdf_Export
+INFO:     10.11.15.3:58584 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40150 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40170 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40434 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40436 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49760 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49762 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+已删除 vector_id=d4736d78-fadd-48bd-a6f4-dc01dbdb260d 的记录数: 1
+已删除 vector_id=7c5ffa32-68c1-4c63-a0de-0e78f3197016 的记录数: 1
+已删除 vector_id=bc49b1ab-dc1d-4c33-9413-99484f785c1c 的记录数: 1
+已删除 vector_id=0aa2022d-b92d-459d-8034-f8583b6d8269 的记录数: 1
+已删除 vector_id=b18b9b56-219b-4c65-a360-78c48b040cb5 的记录数: 1
+已删除 vector_id=076e04ca-e200-4557-89b0-bb81d4c641a8 的记录数: 1
+已删除 vector_id=6deb66a3-6fc9-4a2b-8f24-a9837db78c45 的记录数: 1
+已删除 vector_id=86d31ab8-2a25-49cc-972f-2374d3bd20a7 的记录数: 1
+已删除 vector_id=953b2b59-47b1-4557-b817-ebdfebf8fa35 的记录数: 1
+已删除 vector_id=3725c586-9128-475a-af34-0adbbdc755bb 的记录数: 1
+已删除 vector_id=d98fb1d1-b350-4045-89e4-ca52ffd0c479 的记录数: 1
+已删除 vector_id=68bd237d-2e8a-4ed4-816f-3a439523d6b3 的记录数: 1
+已删除 vector_id=2caac596-f911-46f5-b24e-bc90145f70fc 的记录数: 1
+已删除 vector_id=5fb3bcfa-439e-406c-9a6d-d24341dc49a3 的记录数: 1
+已删除 vector_id=06157d30-4ef2-4050-b66b-b7ec5a45fd40 的记录数: 1
+已删除 vector_id=8a50bcce-dc6d-4d9a-8c56-a0258b1474ea 的记录数: 1
+INFO:     10.11.15.3:49802 - "DELETE /kb/remove-vector HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49808 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49838 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49840 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     192.168.17.65:59925 - "GET /kb/vector-list?faiss_name=cs1&page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:55570 - "GET /kb/vector-list?faiss_name=cs1&page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     192.168.17.65:59925 - "GET /kb/vector-list?faiss_name=cs&page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:57998 - "GET /kb/vector-list?faiss_name=cs&page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34314 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34316 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:36202 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:36204 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37782 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37798 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs1 HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:39210 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39212 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39216 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs1 HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:39912 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39914 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39922 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39924 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs1 HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:40182 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40216 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40218 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46690 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56566 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56568 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56572 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56586 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56588 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs1 HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:56596 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56632 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs1 HTTP/1.1" 500 Internal Server Error
+INFO:     10.11.15.3:56670 - "DELETE /kb/remove-kb HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56674 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56676 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56698 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56700 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56708 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56712 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56718 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_816e864618704818862cb0ea3b22f251.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_816e864618704818862cb0ea3b22f251.pdf using filter : writer_pdf_Export
+INFO:     10.11.15.3:60400 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46220 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46222 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46576 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46584 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46688 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46690 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_3da5439af18842df9bc98ff691d312af.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_3da5439af18842df9bc98ff691d312af.pdf using filter : writer_pdf_Export
+INFO:     10.11.15.3:46738 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52100 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52106 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_a1f1a18533654aba9fda3bee9b63d8e1.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_a1f1a18533654aba9fda3bee9b63d8e1.pdf using filter : writer_pdf_Export
+INFO:     10.11.15.3:52266 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53368 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56350 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33510 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33524 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33574 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33586 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33596 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33602 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39960 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39964 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_a04919f5e44e48618572b112e316d9af.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_a04919f5e44e48618572b112e316d9af.pdf using filter : writer_pdf_Export
+INFO:     10.11.15.3:40002 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40222 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48652 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48658 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+已删除 vector_id=a252613a-8cba-4c7c-8725-818c74eb9c59 的记录数: 1
+已删除 vector_id=63b0cd37-2d9e-4e19-b4ef-f36904f4d0ef 的记录数: 1
+已删除 vector_id=55065840-d6c6-485c-bd66-417271c33d5b 的记录数: 1
+已删除 vector_id=b425e02e-6637-443a-9b7d-308b09836e9e 的记录数: 1
+已删除 vector_id=25f2dd24-64c2-400c-b363-9d8e45c4131c 的记录数: 1
+已删除 vector_id=812e8d17-f891-4cb3-9434-f2bb1ef3bdd9 的记录数: 1
+已删除 vector_id=5e5e2d94-1fe7-4a33-9515-e5a359ba09d0 的记录数: 1
+已删除 vector_id=828e7c53-7389-41c6-b657-3a4dad4cd089 的记录数: 1
+已删除 vector_id=b101f299-93ee-4a72-bc18-895db226fbad 的记录数: 1
+已删除 vector_id=8a0204b1-2e7f-42c7-8a0a-f3e5320821d5 的记录数: 1
+已删除 vector_id=60e34523-e1b3-400a-b989-951c198bd2ac 的记录数: 1
+已删除 vector_id=b0d9875d-8575-4c04-a83e-3f3d508dcf0e 的记录数: 1
+已删除 vector_id=049d7de1-2016-4036-a719-837becd02537 的记录数: 1
+已删除 vector_id=7782bbbe-767a-4af9-84d7-c082cb18cd65 的记录数: 1
+已删除 vector_id=b726b7b7-b27a-4569-ad13-05180f844935 的记录数: 1
+已删除 vector_id=ac562927-9f05-4db8-969d-67fa3a1253b6 的记录数: 1
+已删除 vector_id=bc60257b-4480-4454-94d7-512b582815cb 的记录数: 1
+已删除 vector_id=9f44696d-13b5-488e-af64-3ebac58de36f 的记录数: 1
+已删除 vector_id=5d693b1a-9d0e-4c58-ad5e-8a1cecc79405 的记录数: 1
+已删除 vector_id=6f6661bb-ffaa-4c21-8739-0ae71d5d1c91 的记录数: 1
+INFO:     10.11.15.3:49982 - "DELETE /kb/remove-vector HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49984 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+已删除 vector_id=c14cd562-6c50-4e13-9fef-051407e4e064 的记录数: 1
+已删除 vector_id=8469e3c0-5af9-449e-a8d3-45556f788a98 的记录数: 1
+已删除 vector_id=b3c8afa1-bb67-4e69-a2ab-786ac3075835 的记录数: 1
+已删除 vector_id=b09f6334-fe23-4a78-8ef2-96a99ab82bf5 的记录数: 1
+已删除 vector_id=272e9577-17f4-454d-ae16-63a8eaa4ddb0 的记录数: 1
+已删除 vector_id=98c5048e-effa-4785-83b3-d986029bbff2 的记录数: 1
+已删除 vector_id=001f631c-a374-4726-b8dd-dda66d060a9e 的记录数: 1
+已删除 vector_id=637b52c1-3df6-4b20-abfb-639841b892eb 的记录数: 1
+已删除 vector_id=f8620bc7-73cc-4b1e-8046-78ed9c03d6f1 的记录数: 1
+已删除 vector_id=2ef17a67-0a92-4c27-ba3e-c85902e34bba 的记录数: 1
+已删除 vector_id=347193dc-bd8c-4d4b-8b51-5892f359a5f3 的记录数: 1
+已删除 vector_id=5829486a-36f1-4ef8-9fbd-f8163a737cab 的记录数: 1
+已删除 vector_id=136f77e5-0025-4544-81c1-615829378ea1 的记录数: 1
+已删除 vector_id=16f11724-773b-4c79-807e-38d845e451da 的记录数: 1
+已删除 vector_id=a0565009-3fac-4fd1-9211-e83b1bf1d819 的记录数: 1
+已删除 vector_id=497f5de6-0000-4a71-a968-bddccd1812ca 的记录数: 1
+已删除 vector_id=0c9ad5cc-f51d-4ec6-b762-6306ab13856b 的记录数: 1
+已删除 vector_id=5872c931-2c48-4c9b-978c-d93eca52c37e 的记录数: 1
+已删除 vector_id=8b36e0a0-4291-42fe-a7ae-f33ed5e0693f 的记录数: 1
+已删除 vector_id=01a4b8d4-c508-4a96-99ef-47f374e738f0 的记录数: 1
+INFO:     10.11.15.3:52002 - "DELETE /kb/remove-vector HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39990 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39996 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39998 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40000 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56760 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56762 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56840 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56842 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60330 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60334 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60348 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60360 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60366 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60368 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60408 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60440 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60446 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33612 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33618 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33630 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33638 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33642 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33650 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46592 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46594 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49692 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49694 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49714 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49718 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52004 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52060 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52072 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55556 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55558 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55634 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55636 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55794 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55796 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55884 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55886 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33900 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33902 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40028 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40030 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43080 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43082 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52348 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52350 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56154 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56156 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52006 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55574 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55688 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55690 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43096 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43098 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48934 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48936 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43066 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43068 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43078 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49720 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49726 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49750 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55540 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55542 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55988 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55992 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56038 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56050 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56060 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56100 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56106 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56108 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56118 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56284 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56290 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56292 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44262 - "GET /download/ HTTP/1.1" 404 Not Found
+INFO:     10.11.15.3:33544 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33546 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40068 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40074 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40138 - "POST /kb/add HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40186 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40440 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40444 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43100 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43106 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43108 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43122 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%934 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43128 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43134 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43138 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43146 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43078 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%933 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43082 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43086 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43096 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52344 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52346 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52968 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53294 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53320 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53334 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53346 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53418 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33278 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33300 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40422 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44692 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44694 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44706 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44726 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44728 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44748 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52220 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53400 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53402 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53414 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56598 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60648 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39202 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40032 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56968 - "GET /kb/vector-list?faiss_name=cs&page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39510 - "GET /kb/knowledg-list?page=1&size=10 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39980 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39982 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39998 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40006 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=cs HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40028 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%932 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40032 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40068 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43166 - "GET /kb/search?db_name=%E7%9F%A5%E8%AF%86%E5%BA%931&query=%E6%88%91%E5%B8%85%E5%90%97 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56590 - "GET /kb/search?db_name=%E7%9F%A5%E8%AF%86%E5%BA%931&query=%E6%96%B0%E6%9C%BA%E5%99%A8 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33692 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40490 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55990 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:38950 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39964 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42238 - "GET /kb/vector-list?faiss_name=cs&page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43022 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43024 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44910 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48442 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48444 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48638 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49748 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/paddle/utils/cpp_extension/extension_utils.py:711: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-DocBlockLayout', None)[0m
+[32mUsing official model (PP-DocBlockLayout), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-DocLayout_plus-L', None)[0m
+[32mUsing official model (PP-DocLayout_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_table_cls', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_table_cls), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANeXt_wired', None)[0m
+[32mUsing official model (SLANeXt_wired), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANet_plus', None)[0m
+[32mUsing official model (SLANet_plus), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wired_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wired_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wireless_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wireless_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-FormulaNet_plus-L', None)[0m
+[32mUsing official model (PP-FormulaNet_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     Started server process [2429848]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO:     10.11.15.3:33082 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40084 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40088 - "GET /kb/vector-list?page=1&page_size=20&faiss_name=%E7%9F%A5%E8%AF%86%E5%BA%931 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53600 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33666 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:56666 - "OPTIONS /chat/chat HTTP/1.1" 405 Method Not Allowed
+INFO:     10.11.15.3:33292 - "OPTIONS /chat/chat HTTP/1.1" 405 Method Not Allowed
+INFO:     10.11.15.3:39982 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:49670 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:49972 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56656 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:40268 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:46644 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:55428 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40334 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33718 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33616 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33818 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49670 - "OPTIONS /chat/chat HTTP/1.1" 405 Method Not Allowed
+INFO:     10.11.15.3:52434 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:56488 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:39936 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:44186 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33724 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:56402 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     10.11.15.3:34204 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44886 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33588 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:49716 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:33980 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:52002 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:56470 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:52002 - "POST /chat/chat HTTP/1.1" 422 Unprocessable Content
+INFO:     10.11.15.3:46688 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33804 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46704 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55644 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43114 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55704 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55942 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56382 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56594 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56602 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33554 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33732 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33740 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34152 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34176 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34180 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34182 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:36230 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37782 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39958 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40044 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40222 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46656 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46762 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49988 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53274 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48642 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40270 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:59410 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46602 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35324 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43204 - "POST /chat/chat HTTP/1.1" 200 OK
+/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/paddle/utils/cpp_extension/extension_utils.py:711: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-DocBlockLayout', None)[0m
+[32mUsing official model (PP-DocBlockLayout), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-DocLayout_plus-L', None)[0m
+[32mUsing official model (PP-DocLayout_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_table_cls', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_table_cls), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANeXt_wired', None)[0m
+[32mUsing official model (SLANeXt_wired), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANet_plus', None)[0m
+[32mUsing official model (SLANet_plus), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wired_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wired_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wireless_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wireless_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-FormulaNet_plus-L', None)[0m
+[32mUsing official model (PP-FormulaNet_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     Started server process [3519483]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO:     10.11.15.3:56382 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33700 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49764 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52358 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33414 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:52941 - "GET /chat/chat HTTP/1.1" 405 Method Not Allowed
+INFO:     192.168.10.60:52941 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33414 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33906 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:54726 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34060 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:55441 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:55505 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56766 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:55646 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40432 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:55950 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:34112 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     192.168.10.60:56521 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39902 - "POST /chat/chat HTTP/1.1" 200 OK
+参考文档信息如下：
+[
+  {
+    "content": "六、 硬件服务其他补充条例\n\n1.在本合同的期限内并遵循本协议限制的情况下，对于支持产品在日常使用或惯常使用过程中受到的损坏，以及在搬运中发生的意外损坏（包括摔落和进水）或电涌损坏、人为故意损坏则不在乙方保修范围内。\n\n2.本合同不涵盖支持产品外接的计算机、外围设备或与该设备配合使用的其他设备，也不涵盖组件、机箱、电视或显示器壁挂安装支架、布线或归类为“附件”或“耗材”以及非支持产品基本装置所内置或固有的项目，例如超过保修期的电池、灯泡、一次性/可更换的墨盒、打印纸或相纸、存储磁盘、存储卡、SIM卡、一次性存储设备、线材接头、便携包、手写笔、坞站、外置调制解调器、外置扬声器、游戏设备、游戏光盘、辅助显示设备、笔记本外置鼠标、笔记本外置键盘或其他输入/输出设备，以及其他任何不在协议所涵盖的支持产品内部的组件，或其他需要用户定期维护的部件/组件。\n\n\n\n3.本服务不涵盖软件。本软件排除条款包括但不限于：1)支持产品上预装的软件、与设备一起购买的软件或者设备上加载的软件，以及2)任何通过工厂定制集成服务加载的软件中存在的任何缺陷或受到的任何损坏（包括但不限于因感染病毒而造成的损坏）。另外，本服务还不涵盖通过工厂定制集成添加的任何其他项目。对于本协议所不涵盖的非软件工厂定制集成项目，乙方会做出合理的努力来协助维修或更换",
+    "metadata": {
+      "file_path": "/root/Yy/chatchat/dataset/knowbase/files/非标合同修改版 (2)_10d050b37753496e83305aeb7054274d.docx"
+    },
+    "score": 0.6779975891113281
+  },
+  {
+    "content": "二、 硬件保修服务内容\n\n在设备维护服务期内，乙方负责对正常使用条件下的设备所有硬件做故障诊断、保修及系统性能维护，现场硬件测试及相关故障排除。主要涉及的硬件部件如下：\n\n主机的系统主板、CPU（含CPU板）、内存条或内存板等关键部件\n\n系统电源及附属设备\n\n各种存储设备，包括内置磁盘或外置磁盘阵列、磁带库等\n\n各种适配器卡和终端\n\n系统和扩展机柜、所有连接设备的各种线缆等",
+    "metadata": {
+      "file_path": "/root/Yy/chatchat/dataset/knowbase/files/非标合同修改版 (2)_10d050b37753496e83305aeb7054274d.docx"
+    },
+    "score": 0.6615582704544067
+  }
+]参考文档信息如上；
+
+
+INFO:     192.168.10.60:56697 - "POST /chat/rag HTTP/1.1" 200 OK
+参考文档信息如下：
+[
+  {
+    "content": "六、 硬件服务其他补充条例\n\n1.在本合同的期限内并遵循本协议限制的情况下，对于支持产品在日常使用或惯常使用过程中受到的损坏，以及在搬运中发生的意外损坏（包括摔落和进水）或电涌损坏、人为故意损坏则不在乙方保修范围内。\n\n2.本合同不涵盖支持产品外接的计算机、外围设备或与该设备配合使用的其他设备，也不涵盖组件、机箱、电视或显示器壁挂安装支架、布线或归类为“附件”或“耗材”以及非支持产品基本装置所内置或固有的项目，例如超过保修期的电池、灯泡、一次性/可更换的墨盒、打印纸或相纸、存储磁盘、存储卡、SIM卡、一次性存储设备、线材接头、便携包、手写笔、坞站、外置调制解调器、外置扬声器、游戏设备、游戏光盘、辅助显示设备、笔记本外置鼠标、笔记本外置键盘或其他输入/输出设备，以及其他任何不在协议所涵盖的支持产品内部的组件，或其他需要用户定期维护的部件/组件。\n\n\n\n3.本服务不涵盖软件。本软件排除条款包括但不限于：1)支持产品上预装的软件、与设备一起购买的软件或者设备上加载的软件，以及2)任何通过工厂定制集成服务加载的软件中存在的任何缺陷或受到的任何损坏（包括但不限于因感染病毒而造成的损坏）。另外，本服务还不涵盖通过工厂定制集成添加的任何其他项目。对于本协议所不涵盖的非软件工厂定制集成项目，乙方会做出合理的努力来协助维修或更换",
+    "metadata": {
+      "file_path": "/root/Yy/chatchat/dataset/knowbase/files/非标合同修改版 (2)_10d050b37753496e83305aeb7054274d.docx"
+    },
+    "score": 0.6779975891113281
+  },
+  {
+    "content": "二、 硬件保修服务内容\n\n在设备维护服务期内，乙方负责对正常使用条件下的设备所有硬件做故障诊断、保修及系统性能维护，现场硬件测试及相关故障排除。主要涉及的硬件部件如下：\n\n主机的系统主板、CPU（含CPU板）、内存条或内存板等关键部件\n\n系统电源及附属设备\n\n各种存储设备，包括内置磁盘或外置磁盘阵列、磁带库等\n\n各种适配器卡和终端\n\n系统和扩展机柜、所有连接设备的各种线缆等",
+    "metadata": {
+      "file_path": "/root/Yy/chatchat/dataset/knowbase/files/非标合同修改版 (2)_10d050b37753496e83305aeb7054274d.docx"
+    },
+    "score": 0.6615582704544067
+  }
+]参考文档信息如上；
+
+
+INFO:     192.168.10.60:56697 - "POST /chat/rag HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48642 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35270 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46916 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40574 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44890 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46678 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49964 - "POST /chat/chat HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56088 - "POST /chat/chat HTTP/1.1" 200 OK
+/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/paddle/utils/cpp_extension/extension_utils.py:711: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[32mCreating model: ('PP-DocBlockLayout', None)[0m
+[32mUsing official model (PP-DocBlockLayout), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-DocLayout_plus-L', None)[0m
+[32mUsing official model (PP-DocLayout_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_table_cls', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_table_cls), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANeXt_wired', None)[0m
+[32mUsing official model (SLANeXt_wired), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('SLANet_plus', None)[0m
+[32mUsing official model (SLANet_plus), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wired_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wired_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('RT-DETR-L_wireless_table_cell_det', None)[0m
+[32mUsing official model (RT-DETR-L_wireless_table_cell_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-FormulaNet_plus-L', None)[0m
+[32mUsing official model (PP-FormulaNet_plus-L), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     Started server process [1957140]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO:     10.11.15.3:40050 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40110 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46550 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33074 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49666 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49682 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49736 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49896 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53294 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53390 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53432 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53454 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53460 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53464 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53472 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53494 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53504 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53526 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53538 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53576 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53618 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53628 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53654 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55480 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55986 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56008 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56034 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:57934 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58582 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33544 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33580 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33612 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35208 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35290 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35356 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35386 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35414 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35442 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35530 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35554 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:36208 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39208 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39954 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40170 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40516 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43162 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43210 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44244 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46644 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46676 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46742 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52012 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52030 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52228 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52244 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52254 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52300 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52324 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52326 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52332 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52354 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52364 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52414 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55546 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55552 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55564 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55566 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55568 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55576 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56782 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58590 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60588 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:32858 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:32864 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49970 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52060 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53354 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55732 - "POST /chat/chat-translate HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Yy/chatchat/../chatchat/routers/chat_routers.py", line 77, in chat
+    query= f"请帮我将以下{req.initial_language}翻译成{req.target_language},需要翻译的内容如下：\n{Translate_DOCUMENT_TEXT[req.doc_id]}"
+                                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'ee7e7516-5001-475b-9948-131dea3493dd'
+INFO:     10.11.15.3:56612 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:59388 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60254 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60306 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33286 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33340 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40030 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43068 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43286 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44896 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48912 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42232 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49714 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33570 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35238 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39288 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43110 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46210 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46622 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:46638 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49676 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53330 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55310 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55332 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55510 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55706 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55790 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55870 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55896 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55982 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56008 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56230 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56268 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:57920 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60278 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60616 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52018 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53352 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56016 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56024 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56044 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56060 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49784 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53556 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40244 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40538 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60320 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60322 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:37784 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:39980 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:48922 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60834 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35454 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52304 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55302 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35400 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55992 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40046 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56102 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:57916 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35230 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35392 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:40082 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49692 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49738 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53034 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53414 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53502 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53506 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:59922 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42290 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42310 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:42324 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53306 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55486 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56660 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:53442 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60294 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33698 - "GET /chat/translate-doc-parser?file HTTP/1.1" 405 Method Not Allowed
+INFO:     10.11.15.3:40362 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49782 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55298 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55312 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55612 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:60322 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33364 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:44168 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49698 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:49756 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52002 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:52012 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:56426 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33772 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:35386 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:58984 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33302 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:55490 - "POST /chat/chat-translate HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33340 - "POST /chat/doc-parser HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Yy/chatchat/../chatchat/routers/chat_routers.py", line 99, in doc_parser
+    md_text = parser.to_markdown(str(file_path))
+  File "/root/Yy/chatchat/utils/file_parser.py", line 93, in to_markdown
+    raise ValueError(f"不支持的文件类型：{ext}（支持 docx / pdf / 常见图片 / md）")
+ValueError: 不支持的文件类型：.txt（支持 docx / pdf / 常见图片 / md）
+INFO:     10.11.15.3:39982 - "POST /chat/doc-parser HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/miniconda3/envs/chatchat/lib/python3.13/site-packages/fastapi/routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/Yy/chatchat/../chatchat/routers/chat_routers.py", line 99, in doc_parser
+    md_text = parser.to_markdown(str(file_path))
+  File "/root/Yy/chatchat/utils/file_parser.py", line 93, in to_markdown
+    raise ValueError(f"不支持的文件类型：{ext}（支持 docx / pdf / 常见图片 / md）")
+ValueError: 不支持的文件类型：.txt（支持 docx / pdf / 常见图片 / md）
+INFO:     10.11.15.3:56372 - "GET /chat/translate-doc-parser HTTP/1.1" 405 Method Not Allowed
+Warning: failed to launch javaldx - java may not function correctly
+convert /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_bef077f88a06451e9525dd3916f4bf2c.docx -> /root/Yy/chatchat/dataset/knowbase/files/非标合同修改版_bef077f88a06451e9525dd3916f4bf2c.pdf using filter : writer_pdf_Export
+[32mCreating model: ('PP-LCNet_x1_0_doc_ori', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_doc_ori), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-LCNet_x1_0_textline_ori', None)[0m
+[32mUsing official model (PP-LCNet_x1_0_textline_ori), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_det', None)[0m
+[32mUsing official model (PP-OCRv5_server_det), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+[32mCreating model: ('PP-OCRv5_server_rec', None)[0m
+[32mUsing official model (PP-OCRv5_server_rec), the model files will be automatically downloaded and saved in /root/.paddlex/official_models.[0m
+INFO:     10.11.15.3:56372 - "POST /chat/doc-parser HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33524 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43120 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:43122 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33538 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33540 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33602 - "GET /chat/session-list HTTP/1.1" 200 OK
+INFO:     10.11.15.3:33604 - "GET /kb/knowledg-list?page=1&size=999 HTTP/1.1" 200 OK
