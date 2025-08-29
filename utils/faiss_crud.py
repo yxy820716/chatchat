@@ -13,6 +13,7 @@ from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from chatchat.dataset.db_crud import DB
+from chatchat.utils.markdown_utils import binary_split
 ollama_args=get_config("configs/Model_Config.yaml")
 faiss_args=get_config("configs/Kb_Config.yaml")
 
@@ -61,7 +62,7 @@ class FAISS_CURD:
 
     import math
 
-    def search_vector(self, index_name: str, query: str):
+    def search_vector(self, index_name: str, query: str, max_len: int | None = None):
         """
         在向量库中搜索相似文本，返回 JSON（含内容、metadata、相似度分数 0~1）
         """
@@ -76,13 +77,16 @@ class FAISS_CURD:
 
         output = []
         for doc, distance in results:
-            # 距离转相似度 (0~1)
             similarity = float(1 / (1 + distance))
-            output.append({
-                "content": doc.page_content,
-                "metadata": doc.metadata,
-                "score": similarity
-            })
+            contents = [doc.page_content]
+            if max_len:
+                contents = binary_split(doc.page_content, max_len)
+            for c in contents:
+                output.append({
+                    "content": c,
+                    "metadata": doc.metadata,
+                    "score": similarity,
+                })
         return output
     
 

@@ -7,6 +7,7 @@ from langchain.prompts import ChatPromptTemplate
 
 from chatchat.configs.setting import get_config
 from chatchat.dataset.db_crud import DB
+from chatchat.utils.markdown_utils import split_markdown
 
 # 数据库路径统一
 DB_PATH = "./dataset/history"
@@ -60,20 +61,6 @@ def _get_model_args(model_name: str) -> Dict[str, str]:
     return args
 
 
-def _split_markdown(text: str, max_len: int) -> List[str]:
-    paragraphs = text.split("\n\n")
-    chunks: List[str] = []
-    current = ""
-    for p in paragraphs:
-        if len(current) + len(p) + 2 <= max_len:
-            current += p + "\n\n"
-        else:
-            if current:
-                chunks.append(current)
-            current = p + "\n\n"
-    if current:
-        chunks.append(current)
-    return chunks
 
 
 async def OpenAIChat_Stream(query: str, user_id: int, session_id: Optional[int] = None,
@@ -163,7 +150,7 @@ async def translate_markdown_text(md_text: str, initial_language: str, target_la
     _ensure_tables()
     args = _get_model_args(model_name)
     chunk_size = args.get("max_chunk_len", 1000)
-    chunks = _split_markdown(md_text, chunk_size)
+    chunks = split_markdown(md_text, chunk_size)
     tasks = []
     for chunk in chunks:
         query = f"请帮我将以下{initial_language}翻译成{target_language},需要翻译的内容如下：\n{chunk}"

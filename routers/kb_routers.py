@@ -22,8 +22,9 @@ from pydantic import BaseModel, Field
 # === 业务依赖 ===
 import sys
 sys.path.insert(0, r"../../")
-from utils.faiss_crud import FAISS_CURD
+from utils.faiss_crud import FAISS_CURD, faiss_args
 from utils.file_parser import PPOCRMarkdownParser
+from utils.markdown_utils import split_markdown
 
 FILES_ROOT = Path(__file__).resolve().parent / "../dataset/knowbase/files"
 FILES_ROOT.mkdir(parents=True, exist_ok=True)
@@ -126,13 +127,12 @@ def create_kb(
 
         # 2) 解析为 Markdown
         md_text = parser.to_markdown(str(file_path))
-        md_text=md_text["markdown"]
+        md_text = md_text["markdown"]
         if not md_text or not md_text.strip():
             raise ValueError("解析结果为空")
 
         # 3) 切分成 chunk 列表
-        #    若你的 parser 已带分段，可按需调整
-        vector_list = [seg.strip() for seg in md_text.split("\n## ") if seg.strip()]
+        vector_list = split_markdown(md_text, faiss_args["CHUNK_SIZE"])
         if not vector_list:
             raise ValueError("未切分出有效段落")
 
@@ -153,7 +153,7 @@ def add_vector(
     """
     上传文件 -> 转 Markdown -> 切分 -> 写入向量库
     - 文件保存到 ../dataset/knowbase/{db_name}/files 下（若无自动创建）
-    - Markdown 切分策略：以 '##' 作为章节块
+    - Markdown 切分策略：按标题层级并结合配置的 CHUNK_SIZE 分块
     """
     try:
         # 1) 保存文件
@@ -161,13 +161,12 @@ def add_vector(
 
         # 2) 解析为 Markdown
         md_text = parser.to_markdown(str(file_path))
-        md_text=md_text["markdown"]
+        md_text = md_text["markdown"]
         if not md_text or not md_text.strip():
             raise ValueError("解析结果为空")
 
         # 3) 切分成 chunk 列表
-        #    若你的 parser 已带分段，可按需调整
-        vector_list = [seg.strip() for seg in md_text.split("\n## ") if seg.strip()]
+        vector_list = split_markdown(md_text, faiss_args["CHUNK_SIZE"])
         if not vector_list:
             raise ValueError("未切分出有效段落")
 
@@ -181,9 +180,14 @@ def add_vector(
 
 
 @router.get("/search", response_model=SearchResp)
-def search_vector(db_name: str = Query(...), query: str = Query(...)):
+def search_vector(
+    db_name: str = Query(...),
+    query: str = Query(...),
+    size: int = Query(0, description="检索结果最大长度"),
+):
     try:
-        answer = faiss_curd.search_vector(db_name, query)
+        max_len = size if size > 0 else None
+        answer = faiss_curd.search_vector(db_name, query, max_len)
         return SearchResp(code=200, msg="ok", answer=answer)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"搜索失败: {e}")
