@@ -1,19 +1,11 @@
-# 大模型模型配置文件
-
-OPENAI_MODEL_NAME : 
-  "gpt-oss:120b"
-OPENAI_BASE_URL : 
-  "http://10.11.150.143:11434/v1"
-OPENAI_API_KEY :
-  "laob"
-
-TRANSLATE_CHUNK_LEN :
-  1000
-
-
-
-EMBEDDING_MODEL :
-  "mxbai-embed-large:latest"
-EMBEDDING_URL : 
-  "http://10.11.150.143:11434"
-
+DEFAULT_IP: http://10.11.150.143:8888
+DEFAULT_MODEL: qwen-max
+EMBEDDING_MODEL: mxbai-embed-large:latest
+EMBEDDING_URL: http://10.11.150.143:11434
+OPENAI_MODEL_NAME:
+  gpt-oss:120b:
+    OPENAI_API_KEY: laob
+    OPENAI_BASE_URL: http://10.11.150.143:11434/v1
+  qwen-max:
+    OPENAI_API_KEY: sk-e5d2bc1f146e44ebbf274905cea0f7da
+    OPENAI_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1

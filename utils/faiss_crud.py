@@ -1,3 +1,4 @@
+import json
 from langchain_ollama import OllamaEmbeddings
 import sys
 import uuid
@@ -13,10 +14,8 @@ from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from chatchat.dataset.db_crud import DB
-from chatchat.utils.markdown_utils import binary_split
 ollama_args=get_config("configs/Model_Config.yaml")
 faiss_args=get_config("configs/Kb_Config.yaml")
-
 
 class FAISS_CURD:
     def __init__(self):
@@ -29,6 +28,7 @@ class FAISS_CURD:
         faiss_name, self.embedding_model, allow_dangerous_deserialization=True
         )
         return self.vectorstore
+    
     def add_vector(self,faiss_name,texts,file_path):
         faiss_name=faiss_args["KB_PATH"]+faiss_name
         vectorstore = self.get_vector(faiss_name)
@@ -44,7 +44,7 @@ class FAISS_CURD:
         ]
     def revome_kb(self,index_name):
         index_name=faiss_args["KB_PATH"]+index_name
-        shutil.rmtree(index_name)
+        shutil.rmtree(index_name,ignore_errors=True)
     
     def revome_vector(self,index_name,ids):
         faiss_name=faiss_args["KB_PATH"]+index_name
@@ -62,7 +62,7 @@ class FAISS_CURD:
 
     import math
 
-    def search_vector(self, index_name: str, query: str, max_len: int | None = None):
+    def search_vector(self, index_name: str, query: str , top_k: int = faiss_args["TOP-K"] ):
         """
         在向量库中搜索相似文本，返回 JSON（含内容、metadata、相似度分数 0~1）
         """
@@ -72,21 +72,21 @@ class FAISS_CURD:
         # 获取 (Document, 距离)
         results = vectorstore.similarity_search_with_score(
             query,
-            k=faiss_args["TOP-K"]
+            k= top_k
         )
 
         output = []
         for doc, distance in results:
+            # 距离转相似度 (0~1)
             similarity = float(1 / (1 + distance))
-            contents = [doc.page_content]
-            if max_len:
-                contents = binary_split(doc.page_content, max_len)
-            for c in contents:
-                output.append({
-                    "content": c,
-                    "metadata": doc.metadata,
-                    "score": similarity,
-                })
+            metadata = doc.metadata
+            metadata["file_name"] = os.path.basename(metadata["file_path"])
+            metadata["file_url"] = "/kb/download/" + metadata["file_name"]
+            output.append({
+                "content": doc.page_content,
+                "metadata": doc.metadata,
+                "score": similarity
+            })
         return output
     
 

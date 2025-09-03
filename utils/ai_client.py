@@ -1,159 +1,152 @@
+from email import message
+from sre_constants import CH_LOCALE
+from click import prompt
+from ollama import Message
+import yaml
 import asyncio
-from pathlib import Path
-from typing import List, Optional, Dict
-
-from langchain_openai.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
-
+import sys
+import os
+import json
+import uuid
+import asyncio
+sys.path.insert(0, r"../../")
 from chatchat.configs.setting import get_config
 from chatchat.dataset.db_crud import DB
-from chatchat.utils.markdown_utils import split_markdown
 
-# 数据库路径统一
-DB_PATH = "./dataset/history"
-db = DB(DB_PATH)
+args = get_config("./configs/Model_Config.yaml")["OPENAI_MODEL_NAME"]
+prompts=get_config("./configs/Prompt_Config.yaml")
 
-# 读取默认配置用于首次初始化
-_prompt_init: Dict[str, str] = {}
-_model_init: Dict[str, str] = {}
-if Path("./configs/Prompt_Config.yaml").exists():
-    _prompt_init = get_config("./configs/Prompt_Config.yaml")
-if Path("./configs/Model_Config.yaml").exists():
-    _model_init = get_config("./configs/Model_Config.yaml")
+from langchain_openai.chat_models import ChatOpenAI
+MessageDB = DB("./dataset/history")
+from langchain.prompts import ChatPromptTemplate,PromptTemplate
+from langchain_core.messages import HumanMessage,AIMessage
+from pathlib import Path
+async def OpenAIChat_Stream(model_name,query,session_id=None,message=True,prompt_name="default"):
+    # 查看是否初始化会话表
+    session_path = Path("../dataset/history/session_table.db")
+    if not session_path.exists():
+        MessageDB.create_session_table("session_table")
+    
+    # 查看是否初始化历史记录表
+    history_path = Path("../dataset/history/history.db")
+    if not history_path.exists():
+        MessageDB.create_chat_history_table("history")
+        
+    messages=[]
+    if not session_id:
+        session_id = MessageDB.add_session("session_table", query)
+    
+    if message:
+        try:
+            for i in MessageDB.get_chat_messages("history", session_id,get_id=True):
+                messages.append(HumanMessage(i["user"]))
+                messages.append(AIMessage(i["assistant"]))
+        except Exception as e:
+            pass
+        
+    """OpenAI 模型"""
+    chat = ChatOpenAI(model_name=model_name, base_url=args[model_name]["OPENAI_BASE_URL"],api_key=args[model_name]["OPENAI_API_KEY"])
+    chat_prompt = ChatPromptTemplate.from_messages([
+        ("system",prompts[prompt_name])
+        
+    ]+messages+[("user", "{query}")])
+    chain = chat_prompt | chat
+    contents=""
+    answer= chain.astream({"query": query})
+    async for chunk in answer:
+        if chunk.content:
+            yield {"answer":chunk.content.replace("\u202f"," "),"session_id":session_id}
+            contents+=chunk.content
+    message_id=MessageDB.add_chat_message(
+        db_name="history",
+        session_id=session_id,
+        user="user",
+        user_content=query.split("用户问题如下:\n")[-1],
+        assistant="assistant",
+        assistant_content=contents
+    )
+    yield {"answer":"","session_id":session_id,"message_id":message_id}
 
 
-def _ensure_tables() -> None:
-    """初始化所有需要的表，并在第一次启动时写入默认配置"""
-    if not Path(f"{DB_PATH}/session_table.db").exists():
-        db.create_session_table("session_table")
-    if not Path(f"{DB_PATH}/history.db").exists():
-        db.create_chat_history_table("history")
-    if not Path(f"{DB_PATH}/prompt.db").exists():
-        db.create_prompt_table("prompt")
-    if not Path(f"{DB_PATH}/model_config.db").exists():
-        db.create_model_config_table("model_config")
 
-    # 初始化提示词
-    if not db.get_prompts("prompt") and _prompt_init:
-        for name, content in _prompt_init.items():
-            db.add_prompt("prompt", name, content)
-    # 初始化模型配置
-    if not db.get_model_configs("model_config") and _model_init:
-        db.add_model_config(
-            "model_config",
-            name="default",
-            base_url=_model_init.get("OPENAI_BASE_URL", ""),
-            model_name=_model_init.get("OPENAI_MODEL_NAME", ""),
-            api_key=_model_init.get("OPENAI_API_KEY", ""),
-            max_chunk_len=_model_init.get("TRANSLATE_CHUNK_LEN", 1000),
+async def OpenAIChat_Invoke(model_name,query,session_id=None,stream=True,message=True,prompt_name="default"):
+    # 查看是否初始化会话表
+    session_path = Path("../dataset/history/session_table.db")
+    if not session_path.exists():
+        MessageDB.create_session_table("session_table")
+    
+    # 查看是否初始化历史记录表
+    history_path = Path("../dataset/history/history.db")
+    if not history_path.exists():
+        MessageDB.create_chat_history_table("history")
+        
+    messages=[]
+    if not session_id:
+        session_id = MessageDB.add_session("session_table", query)
+    
+    if message:
+        try:
+           for i in MessageDB.get_chat_messages("history", session_id,get_id=True):
+                messages.append(HumanMessage(i["user"]))
+                messages.append(AIMessage(i["assistant"]))
+        except Exception as e:
+            pass
+        
+    """OpenAI 模型"""
+    chat = ChatOpenAI(model_name=model_name, base_url=args[model_name]["OPENAI_BASE_URL"],api_key=args[model_name]["OPENAI_API_KEY"])
+    chat_prompt = ChatPromptTemplate.from_messages([
+        ("system",prompts[prompt_name])
+    ]+messages+[("user", "{query}")])
+    chain = chat_prompt | chat
+        # contents=""
+    answer= await chain.ainvoke({"query": query})
+    contents=answer.content.replace("\u202f"," ")
+    message_id=MessageDB.add_chat_message(
+        db_name="history",
+        session_id=session_id,
+        user="user",
+        user_content=query,
+        assistant="assistant",
+        assistant_content=contents
         )
-
-
-def _get_prompt(prompt_name: str) -> str:
-    prompt = db.get_prompt("prompt", prompt_name)
-    return prompt or ""
-
-
-def _get_model_args(model_name: str) -> Dict[str, str]:
-    args = db.get_model_config("model_config", model_name)
-    if not args:
-        raise ValueError(f"model config {model_name} not found")
-    return args
+    return {"answer":contents,"session_id":session_id,"message_id":message_id}
 
 
 
-
-async def OpenAIChat_Stream(query: str, user_id: int, session_id: Optional[int] = None,
-                            message: bool = True, prompt_name: str = "default", model_name: str = "default"):
-    _ensure_tables()
-    if not session_id:
-        session_id = db.add_session("session_table", user_id, query)
-    messages = []
-    if message:
-        try:
-            messages = db.get_chat_messages("history", user_id, session_id)
-        except Exception:
-            messages = []
-    args = _get_model_args(model_name)
-    prompt_text = _get_prompt(prompt_name)
-    chat = ChatOpenAI(model_name=args["model_name"], base_url=args["base_url"], api_key=args["api_key"])
+async def TranslateChat_Stream(model_name,query,session_id=None,message=True,prompt_name="default"):
+    # 查看是否初始化会话表
+    """OpenAI 模型"""
+    chat = ChatOpenAI(model_name=model_name, base_url=args[model_name]["OPENAI_BASE_URL"],api_key=args[model_name]["OPENAI_API_KEY"])
     chat_prompt = ChatPromptTemplate.from_messages([
-        ("system", prompt_text),
-    ] + messages + [("user", "{query}")])
+        ("system",prompts[prompt_name]),
+    ]+[("user", "{query}")])
     chain = chat_prompt | chat
-    contents = ""
-    answer = chain.astream({"query": query})
+    answer= chain.astream({"query": query})
     async for chunk in answer:
         if chunk.content:
-            yield {"answer": chunk.content.replace("\u202f", " "), "session_id": session_id}
-            contents += chunk.content
-    db.add_chat_message("history", user_id, session_id, "user", query, "assistant", contents)
+            yield {"answer":chunk.content.replace("\u202f"," "),"session_id":session_id}
 
 
-async def OpenAIChat_Invoke(query: str, user_id: int, session_id: Optional[int] = None,
-                            message: bool = True, prompt_name: str = "default", model_name: str = "default"):
-    _ensure_tables()
-    if not session_id:
-        session_id = db.add_session("session_table", user_id, query)
-    messages = []
-    if message:
-        try:
-            messages = db.get_chat_messages("history", user_id, session_id)
-        except Exception:
-            messages = []
-    args = _get_model_args(model_name)
-    prompt_text = _get_prompt(prompt_name)
-    chat = ChatOpenAI(model_name=args["model_name"], base_url=args["base_url"], api_key=args["api_key"])
+
+async def TranslateChat_Invoke(model_name,query,session_id=None,stream=True,message=True,prompt_name="default"):
+
+    """OpenAI 模型"""
+    chat = ChatOpenAI(model_name=model_name, base_url=args[model_name]["OPENAI_BASE_URL"],api_key=args[model_name]["OPENAI_API_KEY"])
     chat_prompt = ChatPromptTemplate.from_messages([
-        ("system", prompt_text),
-    ] + messages + [("user", "{query}")])
+        ("system",prompts[prompt_name]),
+    ]+[("user", "{query}")])
     chain = chat_prompt | chat
-    answer = await chain.ainvoke({"query": query})
-    contents = answer.content.replace("\u202f", " ")
-    db.add_chat_message("history", user_id, session_id, "user", query, "assistant", contents)
-    return {"answer": contents, "session_id": session_id}
+    answer= await chain.ainvoke({"query": query})
+    contents=answer.content.replace("\u202f"," ")
+    return {"answer":contents}
 
 
-async def TranslateChat_Stream(query: str, model_name: str = "default", prompt_name: str = "Translate"):
-    _ensure_tables()
-    args = _get_model_args(model_name)
-    prompt_text = _get_prompt(prompt_name)
-    chat = ChatOpenAI(model_name=args["model_name"], base_url=args["base_url"], api_key=args["api_key"], temperature=0.4)
-    chat_prompt = ChatPromptTemplate.from_messages([
-        ("system", prompt_text),
-        ("user", "{query}")
-    ])
-    chain = chat_prompt | chat
-    answer = chain.astream({"query": query})
-    async for chunk in answer:
-        if chunk.content:
-            yield {"answer": chunk.content.replace("\u202f", " ")}
+# async def chat_cs():
+#     answer = OpenAIChat_Stream("你好",session_id=12)
+#     async for i in answer:
+#         print(i)
+#     # answer = await OpenAIChat_Invoke("上一次答案再+1=？",session_id=18)
+#     # print(answer)
 
-
-async def TranslateChat_Invoke(query: str, model_name: str = "default", prompt_name: str = "Translate"):
-    _ensure_tables()
-    args = _get_model_args(model_name)
-    prompt_text = _get_prompt(prompt_name)
-    chat = ChatOpenAI(model_name=args["model_name"], base_url=args["base_url"], api_key=args["api_key"])
-    chat_prompt = ChatPromptTemplate.from_messages([
-        ("system", prompt_text),
-        ("user", "{query}")
-    ])
-    chain = chat_prompt | chat
-    answer = await chain.ainvoke({"query": query})
-    return {"answer": answer.content.replace("\u202f", " ")}
-
-
-async def translate_markdown_text(md_text: str, initial_language: str, target_language: str,
-                                  model_name: str = "default", prompt_name: str = "Translate") -> str:
-    """将 Markdown 文本按配置分段并并发翻译"""
-    _ensure_tables()
-    args = _get_model_args(model_name)
-    chunk_size = args.get("max_chunk_len", 1000)
-    chunks = split_markdown(md_text, chunk_size)
-    tasks = []
-    for chunk in chunks:
-        query = f"请帮我将以下{initial_language}翻译成{target_language},需要翻译的内容如下：\n{chunk}"
-        tasks.append(TranslateChat_Invoke(query=query, model_name=model_name, prompt_name=prompt_name))
-    results = await asyncio.gather(*tasks)
-    return "".join(r["answer"] for r in results)
+# if __name__ == "__main__":
+#     asyncio.run(chat_cs())

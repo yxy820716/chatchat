@@ -1,0 +1,184 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=icon href=/favicon.ico><title>AI墨囊(Moku AI)</title><!--[if lt IE 11]><script>window.location.href='/html/ie.html';</script><![endif]--><style>html,
+    body,
+    #app {
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+    .chromeframe {
+      margin: 0.2em 0;
+      background: #ccc;
+      color: #000;
+      padding: 0.2em 0;
+    }
+
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999;
+    }
+
+    #loader {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #FFF;
+      -webkit-animation: spin 2s linear infinite;
+      -ms-animation: spin 2s linear infinite;
+      -moz-animation: spin 2s linear infinite;
+      -o-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+      z-index: 1001;
+    }
+
+    #loader:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #FFF;
+      -webkit-animation: spin 3s linear infinite;
+      -moz-animation: spin 3s linear infinite;
+      -o-animation: spin 3s linear infinite;
+      -ms-animation: spin 3s linear infinite;
+      animation: spin 3s linear infinite;
+    }
+
+    #loader:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #FFF;
+      -moz-animation: spin 1.5s linear infinite;
+      -o-animation: spin 1.5s linear infinite;
+      -ms-animation: spin 1.5s linear infinite;
+      -webkit-animation: spin 1.5s linear infinite;
+      animation: spin 1.5s linear infinite;
+    }
+
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+
+    #loader-wrapper .loader-section {
+      position: fixed;
+      top: 0;
+      width: 51%;
+      height: 100%;
+      background: #7171C6;
+      z-index: 1000;
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    #loader-wrapper .loader-section.section-left {
+      left: 0;
+    }
+
+    #loader-wrapper .loader-section.section-right {
+      right: 0;
+    }
+
+
+    .loaded #loader-wrapper .loader-section.section-left {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader-wrapper .loader-section.section-right {
+      -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      transform: translateX(100%);
+      -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      transform: translateY(-100%);
+      -webkit-transition: all 0.3s 1s ease-out;
+      transition: all 0.3s 1s ease-out;
+    }
+
+    .no-js #loader-wrapper {
+      display: none;
+    }
+
+    .no-js h1 {
+      color: #222222;
+    }
+
+    #loader-wrapper .load_title {
+      font-family: 'Open Sans';
+      color: #FFF;
+      font-size: 19px;
+      width: 100%;
+      text-align: center;
+      z-index: 9999999999999;
+      position: absolute;
+      top: 60%;
+      opacity: 1;
+      line-height: 30px;
+    }
+
+    #loader-wrapper .load_title span {
+      font-weight: normal;
+      font-style: italic;
+      font-size: 13px;
+      color: #FFF;
+      opacity: 0.5;
+    }</style><link href=/static/css/chunk-elementUI.6e808e7d.css rel=stylesheet><link href=/static/css/chunk-libs.2f2a22c4.css rel=stylesheet><link href=/static/css/app.190cc130.css rel=stylesheet></head><body><div id=app><div id=loader-wrapper><div id=loader></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div><div class=load_title>正在加载系统资源，请耐心等待</div></div></div><script>(function(c){function e(e){for(var u,d,a=e[0],k=e[1],b=e[2],t=0,r=[];t<a.length;t++)d=a[t],Object.prototype.hasOwnProperty.call(h,d)&&h[d]&&r.push(h[d][0]),h[d]=0;for(u in k)Object.prototype.hasOwnProperty.call(k,u)&&(c[u]=k[u]);o&&o(e);while(r.length)r.shift()();return f.push.apply(f,b||[]),n()}function n(){for(var c,e=0;e<f.length;e++){for(var n=f[e],u=!0,d=1;d<n.length;d++){var a=n[d];0!==h[a]&&(u=!1)}u&&(f.splice(e--,1),c=k(k.s=n[0]))}return c}var u={},d={runtime:0},h={runtime:0},f=[];function a(c){return k.p+"static/js/"+({}[c]||c)+"."+{"chunk-005cb0c7":"1d0ef7c0","chunk-04621586":"84a3b548","chunk-086a1746":"50a2ccf6","chunk-0962ea8a":"bb0e6ab3","chunk-0c6cb654":"57e7c65e","chunk-0f884c5c":"ea7f3ab0","chunk-129e35b4":"4a609c7b","chunk-13d041bf":"fc56422c","chunk-1cf3aff6":"a6c9cb6d","chunk-1348daec":"1dbb4dff","chunk-2bb7b688":"b03603d6","chunk-2d0c94ba":"e60e860c","chunk-3bd59f32":"8095a66c","chunk-3d418094":"e6f71cc7","chunk-4b1e4dca":"86147483","chunk-50e312d8":"61551755","chunk-5a2e2ee0":"5093bddd","chunk-738dff38":"7eec2d89","chunk-9a569442":"c8929350","chunk-1fe1ca43":"2390b8bf","chunk-210ca3e9":"7c41e354","chunk-210ce324":"02f9d9fa","chunk-2727631f":"c87ff3a4","chunk-28c2023a":"5e3970cb","chunk-2a47f792":"bbc03938","chunk-66e0fefc":"e070437f","chunk-2d221451":"a4662183","chunk-42457600":"b9967b29","chunk-2d0a2d73":"561298c8","chunk-2d0b2b28":"26e90221","chunk-115a5b6c":"6081d10f","chunk-bed29d84":"ac29a066","chunk-2d0bce05":"ad85fe73","chunk-2d0c4687":"eac8f3c1","chunk-2d0c8e18":"5c21a8e2","chunk-2d0d0027":"03703363","chunk-2d0d7289":"20594d71","chunk-2d0da2ea":"6b213202","chunk-2d0e2366":"00afd6b9","chunk-0aadf7dc":"3f133390","chunk-a0fb3e3e":"2cc6a6ab","chunk-2d0f012d":"ddeb06bb","chunk-2d20809b":"e4fd68b7","chunk-2d20955d":"cb6b7bf8","chunk-2d21068c":"9d0c8aea","chunk-4cb9679d":"7d85197a","chunk-4d50a738":"74350600","chunk-2d212b99":"eadf8bea","chunk-2d2102b6":"1d997a85","chunk-36af3650":"1f45e8e6","chunk-0d5b0085":"00d0b888","chunk-60006966":"e7158f72","chunk-6bdc615c":"8ed02db2","chunk-e2ef1232":"188f7ba7","chunk-2d217a3b":"4f81d012","chunk-2d217c9e":"5498c681","chunk-2d21a3bb":"b78e776d","chunk-2d22252c":"8e62da57","chunk-2d230898":"a3363a2d","chunk-2d2311b7":"5d053704","chunk-2d238605":"9e906377","chunk-3037044f":"515d986b","chunk-39413ce8":"203cb279","chunk-3a08d90c":"318242bb","chunk-46f2cf5c":"99a17d64","chunk-47fb5a6e":"9c420931","chunk-4f0a1ee6":"cdab5fd5","chunk-4f55a4ac":"59b084ee","chunk-5483fd6c":"421cb051","chunk-54d1f5f3":"8e3cb971","chunk-555e0949":"ceffe05a","chunk-55f512f9":"0770c38f","chunk-582b2a7a":"50687d3a","chunk-5b83c289":"364ba842","chunk-7fa21b9b":"be18a18e","chunk-5bb73842":"5f889adb","chunk-2d0de3b1":"1acbb9cf","chunk-548b6580":"8a5aac8d","chunk-3b0424d2":"06bf283f","chunk-67956d59":"de2dea05","chunk-712f179b":"4ba35263","chunk-5c150a3b":"92791584","chunk-60dd051e":"f725fc1b","chunk-619deb0e":"f9d2fa7a","chunk-6746b265":"31eea49f","chunk-68702101":"b3e15058","chunk-6b0cc874":"250e1177","chunk-746e7a3d":"ce553e20","chunk-7602fc44":"6f712772","chunk-7e203972":"92d916aa","chunk-7fee3cd6":"eab237ee","chunk-8579d4da":"66e32504","chunk-8ee3fc10":"4c178d9d","chunk-9ab0585e":"6a357993","chunk-9b2af33e":"ec3afac4","chunk-38d8ac8e":"aebecc39","chunk-450b62b2":"f054c7ca","chunk-e3c4b37a":"efe06eed","chunk-a662c34e":"57f63462","chunk-c5faaa6e":"b2dafbe6","chunk-d19c1a98":"114c173a","chunk-df8e2fec":"4b960e39","chunk-e648d5fe":"f491b8f7","chunk-ea739e9c":"570e7afe","chunk-46ab927c":"133a0218","chunk-95a0f9b8":"fbb05f75"}[c]+".js"}function k(e){if(u[e])return u[e].exports;var n=u[e]={i:e,l:!1,exports:{}};return c[e].call(n.exports,n,n.exports,k),n.l=!0,n.exports}k.e=function(c){var e=[],n={"chunk-086a1746":1,"chunk-0f884c5c":1,"chunk-3bd59f32":1,"chunk-3d418094":1,"chunk-738dff38":1,"chunk-9a569442":1,"chunk-1fe1ca43":1,"chunk-28c2023a":1,"chunk-2a47f792":1,"chunk-66e0fefc":1,"chunk-42457600":1,"chunk-115a5b6c":1,"chunk-bed29d84":1,"chunk-0aadf7dc":1,"chunk-a0fb3e3e":1,"chunk-4cb9679d":1,"chunk-4d50a738":1,"chunk-36af3650":1,"chunk-6bdc615c":1,"chunk-3037044f":1,"chunk-46f2cf5c":1,"chunk-47fb5a6e":1,"chunk-4f0a1ee6":1,"chunk-4f55a4ac":1,"chunk-5483fd6c":1,"chunk-54d1f5f3":1,"chunk-55f512f9":1,"chunk-5b83c289":1,"chunk-5bb73842":1,"chunk-67956d59":1,"chunk-5c150a3b":1,"chunk-60dd051e":1,"chunk-619deb0e":1,"chunk-6746b265":1,"chunk-746e7a3d":1,"chunk-7602fc44":1,"chunk-7fee3cd6":1,"chunk-9ab0585e":1,"chunk-9b2af33e":1,"chunk-38d8ac8e":1,"chunk-450b62b2":1,"chunk-e3c4b37a":1,"chunk-c5faaa6e":1,"chunk-df8e2fec":1,"chunk-e648d5fe":1,"chunk-ea739e9c":1,"chunk-46ab927c":1,"chunk-95a0f9b8":1};d[c]?e.push(d[c]):0!==d[c]&&n[c]&&e.push(d[c]=new Promise((function(e,n){for(var u="static/css/"+({}[c]||c)+"."+{"chunk-005cb0c7":"31d6cfe0","chunk-04621586":"31d6cfe0","chunk-086a1746":"33476d7b","chunk-0962ea8a":"31d6cfe0","chunk-0c6cb654":"31d6cfe0","chunk-0f884c5c":"ccba9594","chunk-129e35b4":"31d6cfe0","chunk-13d041bf":"31d6cfe0","chunk-1cf3aff6":"31d6cfe0","chunk-1348daec":"31d6cfe0","chunk-2bb7b688":"31d6cfe0","chunk-2d0c94ba":"31d6cfe0","chunk-3bd59f32":"6dd01166","chunk-3d418094":"7e77c6a2","chunk-4b1e4dca":"31d6cfe0","chunk-50e312d8":"31d6cfe0","chunk-5a2e2ee0":"31d6cfe0","chunk-738dff38":"d08f05e8","chunk-9a569442":"b94b48c5","chunk-1fe1ca43":"6cedcc6d","chunk-210ca3e9":"31d6cfe0","chunk-210ce324":"31d6cfe0","chunk-2727631f":"31d6cfe0","chunk-28c2023a":"00943052","chunk-2a47f792":"f1b1baa1","chunk-66e0fefc":"c622638d","chunk-2d221451":"31d6cfe0","chunk-42457600":"8f67dc45","chunk-2d0a2d73":"31d6cfe0","chunk-2d0b2b28":"31d6cfe0","chunk-115a5b6c":"f8404e7d","chunk-bed29d84":"f8404e7d","chunk-2d0bce05":"31d6cfe0","chunk-2d0c4687":"31d6cfe0","chunk-2d0c8e18":"31d6cfe0","chunk-2d0d0027":"31d6cfe0","chunk-2d0d7289":"31d6cfe0","chunk-2d0da2ea":"31d6cfe0","chunk-2d0e2366":"31d6cfe0","chunk-0aadf7dc":"3a8cae2a","chunk-a0fb3e3e":"3a8cae2a","chunk-2d0f012d":"31d6cfe0","chunk-2d20809b":"31d6cfe0","chunk-2d20955d":"31d6cfe0","chunk-2d21068c":"31d6cfe0","chunk-4cb9679d":"50f1d37a","chunk-4d50a738":"926cea41","chunk-2d212b99":"31d6cfe0","chunk-2d2102b6":"31d6cfe0","chunk-36af3650":"2fe730cc","chunk-0d5b0085":"31d6cfe0","chunk-60006966":"31d6cfe0","chunk-6bdc615c":"8e33e124","chunk-e2ef1232":"31d6cfe0","chunk-2d217a3b":"31d6cfe0","chunk-2d217c9e":"31d6cfe0","chunk-2d21a3bb":"31d6cfe0","chunk-2d22252c":"31d6cfe0","chunk-2d230898":"31d6cfe0","chunk-2d2311b7":"31d6cfe0","chunk-2d238605":"31d6cfe0","chunk-3037044f":"3ee0b3ca","chunk-39413ce8":"31d6cfe0","chunk-3a08d90c":"31d6cfe0","chunk-46f2cf5c":"b5bdb2c6","chunk-47fb5a6e":"b098831d","chunk-4f0a1ee6":"873bd50b","chunk-4f55a4ac":"27e4d2df","chunk-5483fd6c":"f72ad35a","chunk-54d1f5f3":"2f319299","chunk-555e0949":"31d6cfe0","chunk-55f512f9":"33476d7b","chunk-582b2a7a":"31d6cfe0","chunk-5b83c289":"ce2a2394","chunk-7fa21b9b":"31d6cfe0","chunk-5bb73842":"84f98409","chunk-2d0de3b1":"31d6cfe0","chunk-548b6580":"31d6cfe0","chunk-3b0424d2":"31d6cfe0","chunk-67956d59":"0113c56b","chunk-712f179b":"31d6cfe0","chunk-5c150a3b":"af3dec5c","chunk-60dd051e":"c642d84e","chunk-619deb0e":"10ec4a9d","chunk-6746b265":"1154d03c","chunk-68702101":"31d6cfe0","chunk-6b0cc874":"31d6cfe0","chunk-746e7a3d":"bd4b4024","chunk-7602fc44":"3f151783","chunk-7e203972":"31d6cfe0","chunk-7fee3cd6":"cab75391","chunk-8579d4da":"31d6cfe0","chunk-8ee3fc10":"31d6cfe0","chunk-9ab0585e":"361e71f3","chunk-9b2af33e":"4d04abde","chunk-38d8ac8e":"8a6154e4","chunk-450b62b2":"30f35e38","chunk-e3c4b37a":"84c27bb8","chunk-a662c34e":"31d6cfe0","chunk-c5faaa6e":"00db942b","chunk-d19c1a98":"31d6cfe0","chunk-df8e2fec":"d56cde64","chunk-e648d5fe":"265d9d9a","chunk-ea739e9c":"79eef518","chunk-46ab927c":"ff09cdbd","chunk-95a0f9b8":"e6fca4da"}[c]+".css",h=k.p+u,f=document.getElementsByTagName("link"),a=0;a<f.length;a++){var b=f[a],t=b.getAttribute("data-href")||b.getAttribute("href");if("stylesheet"===b.rel&&(t===u||t===h))return e()}var r=document.getElementsByTagName("style");for(a=0;a<r.length;a++){b=r[a],t=b.getAttribute("data-href");if(t===u||t===h)return e()}var o=document.createElement("link");o.rel="stylesheet",o.type="text/css",o.onload=e,o.onerror=function(e){var u=e&&e.target&&e.target.src||h,f=new Error("Loading CSS chunk "+c+" failed.\n("+u+")");f.code="CSS_CHUNK_LOAD_FAILED",f.request=u,delete d[c],o.parentNode.removeChild(o),n(f)},o.href=h;var i=document.getElementsByTagName("head")[0];i.appendChild(o)})).then((function(){d[c]=0})));var u=h[c];if(0!==u)if(u)e.push(u[2]);else{var f=new Promise((function(e,n){u=h[c]=[e,n]}));e.push(u[2]=f);var b,t=document.createElement("script");t.charset="utf-8",t.timeout=120,k.nc&&t.setAttribute("nonce",k.nc),t.src=a(c);var r=new Error;b=function(e){t.onerror=t.onload=null,clearTimeout(o);var n=h[c];if(0!==n){if(n){var u=e&&("load"===e.type?"missing":e.type),d=e&&e.target&&e.target.src;r.message="Loading chunk "+c+" failed.\n("+u+": "+d+")",r.name="ChunkLoadError",r.type=u,r.request=d,n[1](r)}h[c]=void 0}};var o=setTimeout((function(){b({type:"timeout",target:t})}),12e4);t.onerror=t.onload=b,document.head.appendChild(t)}return Promise.all(e)},k.m=c,k.c=u,k.d=function(c,e,n){k.o(c,e)||Object.defineProperty(c,e,{enumerable:!0,get:n})},k.r=function(c){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(c,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(c,"__esModule",{value:!0})},k.t=function(c,e){if(1&e&&(c=k(c)),8&e)return c;if(4&e&&"object"===typeof c&&c&&c.__esModule)return c;var n=Object.create(null);if(k.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:c}),2&e&&"string"!=typeof c)for(var u in c)k.d(n,u,function(e){return c[e]}.bind(null,u));return n},k.n=function(c){var e=c&&c.__esModule?function(){return c["default"]}:function(){return c};return k.d(e,"a",e),e},k.o=function(c,e){return Object.prototype.hasOwnProperty.call(c,e)},k.p="/",k.oe=function(c){throw console.error(c),c};var b=window["webpackJsonp"]=window["webpackJsonp"]||[],t=b.push.bind(b);b.push=e,b=b.slice();for(var r=0;r<b.length;r++)e(b[r]);var o=t;n()})([]);</script><script src=/static/js/chunk-elementUI.1faa5840.js></script><script src=/static/js/chunk-libs.70bb0468.js></script><script src=/static/js/app.df576cf1.js></script></body></html>

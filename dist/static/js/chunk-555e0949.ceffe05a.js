@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-555e0949"],{"106f":function(n,i,p){"use strict";p.r(i);var t=p("87d4"),a=p.n(t);i["default"]={bg1:a.a}},"87d4":function(n,i,p){n.exports=p.p+"static/img/file.237863ab.png"}}]);

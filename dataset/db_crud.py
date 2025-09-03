@@ -3,6 +3,7 @@ import sqlite3
 from typing import Optional, Dict, Any
 import math
 from typing import List, Dict, Any
+
 class DB:
     def __init__(self, db_path: str = "database"):
         """
@@ -133,45 +134,58 @@ class DB:
             print(f"删除向量数据失败: {e}")
             raise
 
-
     # ---------------- 会话表 ----------------
     def create_session_table(self, db_name: str) -> None:
-        """创建会话表，支持多用户"""
         with self._connect(db_name) as db:
             db.execute('''
                 CREATE TABLE IF NOT EXISTS session (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    user_id INTEGER NOT NULL,
                     session_name TEXT NOT NULL,
                     create_time TIMESTAMP DEFAULT (datetime('now', '+8 hours'))
                 )
             ''')
             db.commit()
 
-    def add_session(self, db_name: str, user_id: int, session_name: str) -> int:
-        """为指定用户创建会话"""
+    def add_session(self, db_name: str, session_name: str) -> int:
         with self._connect(db_name) as db:
             cur = db.execute(
-                "INSERT INTO session (user_id, session_name) VALUES (?, ?)",
-                (user_id, session_name),
+                "INSERT INTO session (session_name) VALUES (?)",
+                (session_name,)
             )
             db.commit()
             return cur.lastrowid  # 返回自增 id
 
-    def get_sessions(self, db_name: str, user_id: int) -> List[Dict[str, Any]]:
-        """获取用户的会话列表"""
+    def get_sessions(self, db_name: str) -> List[Dict[str, Any]]:
         with self._connect(db_name) as db:
             cur = db.execute(
-                "SELECT id, session_name, create_time FROM session WHERE user_id = ? ORDER BY create_time DESC",
-                (user_id,),
+                "SELECT id, session_name, create_time FROM session ORDER BY create_time DESC"
             )
             return [dict(r) for r in cur.fetchall()]
+    
+    def update_session_name(self, db_name: str, session_id: int, new_name: str) -> bool:
+        """
+        根据 id 更新 session 表里的 session_name。
+        返回 True 表示确实更新了行，False 表示未更新（可能 id 不存在或新旧名称相同）。
+        """
+        with self._connect(db_name) as db:
+            cur = db.execute(
+                "UPDATE session SET session_name = ? WHERE id = ?",
+                (new_name, session_id)
+            )
+            db.commit()
+            return cur.rowcount > 0
 
     def delete_session(self, db_name: str, session_id: int) -> int:
         with self._connect(db_name) as db:
             cur = db.execute("DELETE FROM session WHERE id = ?", (session_id,))
             db.commit()
             return cur.rowcount
+        
+    def delete_sessions(self, db_name: str) -> int:
+        with self._connect(db_name) as db:
+            cur = db.execute("DELETE FROM session")
+            db.commit()
+            return True
 
     # ---------------- 历史对话表 ----------------
     def create_chat_history_table(self, db_name: str) -> None:
@@ -179,7 +193,6 @@ class DB:
             db.execute('''
                 CREATE TABLE IF NOT EXISTS chat_history (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    user_id INTEGER NOT NULL,
                     session_id INTEGER NOT NULL,
                     user TEXT NOT NULL,
                     user_content TEXT NOT NULL,
@@ -191,37 +204,44 @@ class DB:
             ''')
             db.commit()
 
-    def add_chat_message(self, db_name: str, user_id: int, session_id: int, user: str, user_content: str, assistant: str, assistant_content: str) -> int:
+    def add_chat_message(self, db_name: str, session_id: int, user: str, user_content: str, assistant: str, assistant_content: str) -> int:
         with self._connect(db_name) as db:
             cur = db.execute(
-                "INSERT INTO chat_history (user_id, session_id, user, user_content, assistant, assistant_content) VALUES (?, ?, ?, ?, ?, ?)",
-                (user_id, session_id, user, user_content, assistant, assistant_content)
+                "INSERT INTO chat_history (session_id, user, user_content, assistant, assistant_content) VALUES (?, ?, ?, ?, ?)",
+                (session_id, user, user_content, assistant, assistant_content)
             )
             db.commit()
             return cur.lastrowid
 
-    def get_chat_messages(self, db_name: str, user_id: int, session_id: int, limit: int = 20) -> List[Dict[str, Any]]:
+    def get_chat_messages(self, db_name: str, session_id: int, limit: int = 20, get_id=False) -> List[Dict[str, Any]]:
         """获取某个会话最新 limit 条消息（按时间正序返回，便于展示）"""
         with self._connect(db_name) as db:
             cur = db.execute(
                 '''
                 SELECT id, session_id, user, user_content, assistant, assistant_content, create_time
                 FROM chat_history
-                WHERE session_id = ? AND user_id = ?
+                WHERE session_id = ?
                 ORDER BY create_time DESC
                 LIMIT ?
                 ''',
-                (session_id, user_id, limit)
+                (session_id, limit)
             )
             rows = [dict(r) for r in cur.fetchall()]
+            # 倒序取出的，再按时间正序还原对话流
             rows.sort(key=lambda x: x["create_time"])
         messages = []
         for row in rows:
-            messages.append((row["user"], row["user_content"]))
-            if row["assistant_content"]:
-                messages.append((row["assistant"], row["assistant_content"]))
+            # 用户问题
+            
+            # AI回答
+            if row["assistant_content"] and get_id==False:  # 防止为空
+                messages.append((row["user"],row["user_content"]))
+                messages.append((row["assistant"],row["assistant_content"]))
+            elif row["assistant_content"] and get_id==True:
+                messages.append({row["user"]:row["user_content"],row["assistant"]:row["assistant_content"],"message_id":row["id"]})
             else:
-                messages.append((row["assistant"], "回答出现错误，并没有成功回答用户"))
+                messages.append((row["user"],row["user_content"]))
+                messages.append((row["assistant"],"回答出现错误，并没有成功回答用户"))
         return messages
 
     def delete_chat_message(self, db_name: str, message_id: int) -> int:
@@ -230,90 +250,10 @@ class DB:
             db.commit()
             return cur.rowcount
 
-    # ---------------- 提示词表 ----------------
-    def create_prompt_table(self, db_name: str) -> None:
-        with self._connect(db_name) as db:
-            db.execute('''
-                CREATE TABLE IF NOT EXISTS prompt (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT UNIQUE NOT NULL,
-                    content TEXT NOT NULL,
-                    create_time TIMESTAMP DEFAULT (datetime('now', '+8 hours'))
-                )
-            ''')
-            db.commit()
-
-    def add_prompt(self, db_name: str, name: str, content: str) -> int:
-        with self._connect(db_name) as db:
-            cur = db.execute(
-                "INSERT INTO prompt (name, content) VALUES (?, ?)",
-                (name, content),
-            )
-            db.commit()
-            return cur.lastrowid
-
-    def get_prompts(self, db_name: str) -> List[Dict[str, Any]]:
-        with self._connect(db_name) as db:
-            cur = db.execute("SELECT id, name, content, create_time FROM prompt ORDER BY create_time DESC")
-            return [dict(r) for r in cur.fetchall()]
-
-    def get_prompt(self, db_name: str, name: str) -> Optional[str]:
-        with self._connect(db_name) as db:
-            cur = db.execute("SELECT content FROM prompt WHERE name = ?", (name,))
-            row = cur.fetchone()
-            return row["content"] if row else None
-
-    def delete_prompt(self, db_name: str, name: str) -> int:
-        with self._connect(db_name) as db:
-            cur = db.execute("DELETE FROM prompt WHERE name = ?", (name,))
-            db.commit()
-            return cur.rowcount
-
-    # ---------------- 模型配置表 ----------------
-    def create_model_config_table(self, db_name: str) -> None:
-        with self._connect(db_name) as db:
-            db.execute('''
-                CREATE TABLE IF NOT EXISTS model_config (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT UNIQUE NOT NULL,
-                    base_url TEXT NOT NULL,
-                    model_name TEXT NOT NULL,
-                    api_key TEXT NOT NULL,
-                    max_chunk_len INTEGER DEFAULT 1000,
-                    create_time TIMESTAMP DEFAULT (datetime('now', '+8 hours'))
-                )
-            ''')
-            db.commit()
-
-    def add_model_config(self, db_name: str, name: str, base_url: str, model_name: str, api_key: str, max_chunk_len: int = 1000) -> int:
-        with self._connect(db_name) as db:
-            cur = db.execute(
-                "INSERT INTO model_config (name, base_url, model_name, api_key, max_chunk_len) VALUES (?, ?, ?, ?, ?)",
-                (name, base_url, model_name, api_key, max_chunk_len),
-            )
-            db.commit()
-            return cur.lastrowid
-
-    def get_model_configs(self, db_name: str) -> List[Dict[str, Any]]:
-        with self._connect(db_name) as db:
-            cur = db.execute("SELECT id, name, base_url, model_name, api_key, max_chunk_len, create_time FROM model_config ORDER BY create_time DESC")
-            return [dict(r) for r in cur.fetchall()]
-
-    def get_model_config(self, db_name: str, name: str) -> Optional[Dict[str, Any]]:
-        with self._connect(db_name) as db:
-            cur = db.execute("SELECT base_url, model_name, api_key, max_chunk_len FROM model_config WHERE name = ?", (name,))
-            row = cur.fetchone()
-            return dict(row) if row else None
-
-    def delete_model_config(self, db_name: str, name: str) -> int:
-        with self._connect(db_name) as db:
-            cur = db.execute("DELETE FROM model_config WHERE name = ?", (name,))
-            db.commit()
-            return cur.rowcount
 
 # ========== 使用示例（同步版，可直接运行） ==========
-def main():
-    db = DB("./history")  # 指定数据库目录
+# def main():
+    # db = DB("./history")  # 指定数据库目录
 
     # # 创建向量库副本表
     # db.create_vector_db("knowledge_base")
@@ -355,12 +295,12 @@ def main():
     # db.add_chat_message(db_name="history", session_id=sid, role="assistant", content="你好呀，我能帮你什么？")
 
     # 获取最新 20 条消息
-    msgs = db.get_chat_messages("history", user_id=1, session_id=2, limit=20)
-    print("历史消息：", msgs)
-
+    # msgs = db.get_chat_messages("history", 2, limit=20)
+    # print("历史消息：", msgs)
+    # db.delete_chat_message("history","")
 #     # 获取所有会话
-#     sessions = db.get_sessions("session_table", user_id=1)
+#     sessions = db.get_sessions("session_table")
 #     print("会话列表：", sessions)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

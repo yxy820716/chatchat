@@ -22,9 +22,8 @@ from pydantic import BaseModel, Field
 # === 业务依赖 ===
 import sys
 sys.path.insert(0, r"../../")
-from utils.faiss_crud import FAISS_CURD, faiss_args
+from utils.faiss_crud import FAISS_CURD
 from utils.file_parser import PPOCRMarkdownParser
-from utils.markdown_utils import split_markdown
 
 FILES_ROOT = Path(__file__).resolve().parent / "../dataset/knowbase/files"
 FILES_ROOT.mkdir(parents=True, exist_ok=True)
@@ -34,17 +33,7 @@ FILES_ROOT.mkdir(parents=True, exist_ok=True)
 faiss_curd = FAISS_CURD()
 
 # OCR/解析器（按你工程需要调整参数）
-parser = PPOCRMarkdownParser(
-    device="gpu:2,3",
-    use_region_detection=True,
-    use_table_recognition=True,
-    use_formula_recognition=True,
-    # linux
-    poppler_path=None,
-    # sudo apt-get update && sudo apt-get install -y poppler-utils
-    # windows
-    # poppler_path="./poppler-25.07.0"
-)
+parser = PPOCRMarkdownParser()
 
 # -----------------------------
 # Pydantic 模型
@@ -114,7 +103,7 @@ def create_kb(req: CreateKBReq):
         shutil.rmtree("./dataset/knowbase/" + req.db_name)
         raise HTTPException(status_code=500, detail=f"创建失败: {e}")
 
-@router.post("/create/temporary", response_model=BaseResp, status_code=status.HTTP_201_CREATED)
+@router.post("/create/temporary", status_code=status.HTTP_201_CREATED)
 def create_kb(
     db_name: str = Form("Temporary", description="向量库名称"),
     file: UploadFile = File(..., description="上传文档：pdf/docx/png/jpg 等")
@@ -127,18 +116,21 @@ def create_kb(
 
         # 2) 解析为 Markdown
         md_text = parser.to_markdown(str(file_path))
-        md_text = md_text["markdown"]
+        
+        md_text=md_text["markdown"]
+
         if not md_text or not md_text.strip():
             raise ValueError("解析结果为空")
 
         # 3) 切分成 chunk 列表
-        vector_list = split_markdown(md_text, faiss_args["CHUNK_SIZE"])
+        #    若你的 parser 已带分段，可按需调整
+        vector_list = [seg.strip() for seg in md_text.split("\n## ") if seg.strip()]
         if not vector_list:
             raise ValueError("未切分出有效段落")
 
         # 4) 入库
         faiss_curd.add_vector(db_name, vector_list, str(file_path))
-        return BaseResp(code=200, msg=f"知识库 {db_name} 创建成功")
+        return {"code":200,"file_url":"/kb/download/" + os.path.basename(file_path)}
 
     except Exception as e:
         shutil.rmtree("./dataset/knowbase/" + db_name)
@@ -153,7 +145,7 @@ def add_vector(
     """
     上传文件 -> 转 Markdown -> 切分 -> 写入向量库
     - 文件保存到 ../dataset/knowbase/{db_name}/files 下（若无自动创建）
-    - Markdown 切分策略：按标题层级并结合配置的 CHUNK_SIZE 分块
+    - Markdown 切分策略：以 '##' 作为章节块
     """
     try:
         # 1) 保存文件
@@ -161,12 +153,13 @@ def add_vector(
 
         # 2) 解析为 Markdown
         md_text = parser.to_markdown(str(file_path))
-        md_text = md_text["markdown"]
+        md_text=md_text["markdown"]
         if not md_text or not md_text.strip():
             raise ValueError("解析结果为空")
 
         # 3) 切分成 chunk 列表
-        vector_list = split_markdown(md_text, faiss_args["CHUNK_SIZE"])
+        #    若你的 parser 已带分段，可按需调整
+        vector_list = [seg.strip() for seg in md_text.split("\n## ") if seg.strip()]
         if not vector_list:
             raise ValueError("未切分出有效段落")
 
@@ -180,14 +173,9 @@ def add_vector(
 
 
 @router.get("/search", response_model=SearchResp)
-def search_vector(
-    db_name: str = Query(...),
-    query: str = Query(...),
-    size: int = Query(0, description="检索结果最大长度"),
-):
+def search_vector(db_name: str = Query(...), query: str = Query(...),top_k: int = Query(...)):
     try:
-        max_len = size if size > 0 else None
-        answer = faiss_curd.search_vector(db_name, query, max_len)
+        answer = faiss_curd.search_vector(db_name, query,top_k)
         return SearchResp(code=200, msg="ok", answer=answer)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"搜索失败: {e}")
@@ -224,23 +212,26 @@ def vector_list(faiss_name: str= Query(...),page: int= Query(...),page_size :int
 
 @router.get("/knowledg-list", response_model=KnowledgListResp)
 def Knowledg_List(page: int = 1, size: int = 10):
+    base_path = "./dataset/knowbase"
     all_folders = []
     
-    # 遍历知识库目录，只收集文件夹名称
-    for root, dirs, files in os.walk("./dataset/knowbase"):
-        for dir_name in dirs:
-            # 只添加文件夹名称，而不是完整路径
-            all_folders.append(dir_name)
-    all_folders.remove("files")
+    # 获取 knowbase 目录下的直接子文件夹
+    try:
+        with os.scandir(base_path) as entries:
+            for entry in entries:
+                if entry.is_dir() and entry.name not in ["files", "Translate", "Temporary"]:
+                    all_folders.append(entry.name)
+    except FileNotFoundError:
+        # 如果目录不存在，返回空列表
+        pass
+    
     # 分页处理
     if page == 0:
         page = 1
     
-    # 计算分页范围
     start_index = (page - 1) * size
     end_index = page * size
     
-    # 返回分页后的文件夹名称列表
     return KnowledgListResp(
         code=200,
         msg="查询成功",
