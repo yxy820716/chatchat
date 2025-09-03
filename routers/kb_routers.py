@@ -33,17 +33,7 @@ FILES_ROOT.mkdir(parents=True, exist_ok=True)
 faiss_curd = FAISS_CURD()
 
 # OCR/解析器（按你工程需要调整参数）
-parser = PPOCRMarkdownParser(
-    device="gpu:2,3",
-    use_region_detection=True,
-    use_table_recognition=True,
-    use_formula_recognition=True,
-    # linux
-    poppler_path=None,
-    # sudo apt-get update && sudo apt-get install -y poppler-utils
-    # windows
-    # poppler_path="./poppler-25.07.0"
-)
+parser = PPOCRMarkdownParser()
 
 # -----------------------------
 # Pydantic 模型
@@ -113,7 +103,7 @@ def create_kb(req: CreateKBReq):
         shutil.rmtree("./dataset/knowbase/" + req.db_name)
         raise HTTPException(status_code=500, detail=f"创建失败: {e}")
 
-@router.post("/create/temporary", response_model=BaseResp, status_code=status.HTTP_201_CREATED)
+@router.post("/create/temporary", status_code=status.HTTP_201_CREATED)
 def create_kb(
     db_name: str = Form("Temporary", description="向量库名称"),
     file: UploadFile = File(..., description="上传文档：pdf/docx/png/jpg 等")
@@ -126,7 +116,9 @@ def create_kb(
 
         # 2) 解析为 Markdown
         md_text = parser.to_markdown(str(file_path))
+        
         md_text=md_text["markdown"]
+
         if not md_text or not md_text.strip():
             raise ValueError("解析结果为空")
 
@@ -138,7 +130,7 @@ def create_kb(
 
         # 4) 入库
         faiss_curd.add_vector(db_name, vector_list, str(file_path))
-        return BaseResp(code=200, msg=f"知识库 {db_name} 创建成功")
+        return {"code":200,"file_url":"/kb/download/" + os.path.basename(file_path)}
 
     except Exception as e:
         shutil.rmtree("./dataset/knowbase/" + db_name)
@@ -181,9 +173,9 @@ def add_vector(
 
 
 @router.get("/search", response_model=SearchResp)
-def search_vector(db_name: str = Query(...), query: str = Query(...)):
+def search_vector(db_name: str = Query(...), query: str = Query(...),top_k: int = Query(...)):
     try:
-        answer = faiss_curd.search_vector(db_name, query)
+        answer = faiss_curd.search_vector(db_name, query,top_k)
         return SearchResp(code=200, msg="ok", answer=answer)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"搜索失败: {e}")
@@ -220,23 +212,26 @@ def vector_list(faiss_name: str= Query(...),page: int= Query(...),page_size :int
 
 @router.get("/knowledg-list", response_model=KnowledgListResp)
 def Knowledg_List(page: int = 1, size: int = 10):
+    base_path = "./dataset/knowbase"
     all_folders = []
     
-    # 遍历知识库目录，只收集文件夹名称
-    for root, dirs, files in os.walk("./dataset/knowbase"):
-        for dir_name in dirs:
-            # 只添加文件夹名称，而不是完整路径
-            all_folders.append(dir_name)
-    all_folders.remove("files")
+    # 获取 knowbase 目录下的直接子文件夹
+    try:
+        with os.scandir(base_path) as entries:
+            for entry in entries:
+                if entry.is_dir() and entry.name not in ["files", "Translate", "Temporary"]:
+                    all_folders.append(entry.name)
+    except FileNotFoundError:
+        # 如果目录不存在，返回空列表
+        pass
+    
     # 分页处理
     if page == 0:
         page = 1
     
-    # 计算分页范围
     start_index = (page - 1) * size
     end_index = page * size
     
-    # 返回分页后的文件夹名称列表
     return KnowledgListResp(
         code=200,
         msg="查询成功",

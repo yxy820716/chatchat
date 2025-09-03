@@ -3,6 +3,7 @@ import sqlite3
 from typing import Optional, Dict, Any
 import math
 from typing import List, Dict, Any
+
 class DB:
     def __init__(self, db_path: str = "database"):
         """
@@ -160,12 +161,31 @@ class DB:
                 "SELECT id, session_name, create_time FROM session ORDER BY create_time DESC"
             )
             return [dict(r) for r in cur.fetchall()]
+    
+    def update_session_name(self, db_name: str, session_id: int, new_name: str) -> bool:
+        """
+        根据 id 更新 session 表里的 session_name。
+        返回 True 表示确实更新了行，False 表示未更新（可能 id 不存在或新旧名称相同）。
+        """
+        with self._connect(db_name) as db:
+            cur = db.execute(
+                "UPDATE session SET session_name = ? WHERE id = ?",
+                (new_name, session_id)
+            )
+            db.commit()
+            return cur.rowcount > 0
 
     def delete_session(self, db_name: str, session_id: int) -> int:
         with self._connect(db_name) as db:
             cur = db.execute("DELETE FROM session WHERE id = ?", (session_id,))
             db.commit()
             return cur.rowcount
+        
+    def delete_sessions(self, db_name: str) -> int:
+        with self._connect(db_name) as db:
+            cur = db.execute("DELETE FROM session")
+            db.commit()
+            return True
 
     # ---------------- 历史对话表 ----------------
     def create_chat_history_table(self, db_name: str) -> None:
@@ -193,7 +213,7 @@ class DB:
             db.commit()
             return cur.lastrowid
 
-    def get_chat_messages(self, db_name: str, session_id: int, limit: int = 20) -> List[Dict[str, Any]]:
+    def get_chat_messages(self, db_name: str, session_id: int, limit: int = 20, get_id=False) -> List[Dict[str, Any]]:
         """获取某个会话最新 limit 条消息（按时间正序返回，便于展示）"""
         with self._connect(db_name) as db:
             cur = db.execute(
@@ -212,13 +232,15 @@ class DB:
         messages = []
         for row in rows:
             # 用户问题
-            messages.append((row["user"],row["user_content"]))
-            # messages.append({"role": row["user"], "content": row["user_content"]})
+            
             # AI回答
-            if row["assistant_content"]:  # 防止为空
+            if row["assistant_content"] and get_id==False:  # 防止为空
+                messages.append((row["user"],row["user_content"]))
                 messages.append((row["assistant"],row["assistant_content"]))
-                # messages.append({"role": row["assistant"], "content": row["assistant_content"]})
+            elif row["assistant_content"] and get_id==True:
+                messages.append({row["user"]:row["user_content"],row["assistant"]:row["assistant_content"],"message_id":row["id"]})
             else:
+                messages.append((row["user"],row["user_content"]))
                 messages.append((row["assistant"],"回答出现错误，并没有成功回答用户"))
         return messages
 
@@ -227,12 +249,11 @@ class DB:
             cur = db.execute("DELETE FROM chat_history WHERE id = ?", (message_id,))
             db.commit()
             return cur.rowcount
-    
 
 
 # ========== 使用示例（同步版，可直接运行） ==========
-def main():
-    db = DB("./history")  # 指定数据库目录
+# def main():
+    # db = DB("./history")  # 指定数据库目录
 
     # # 创建向量库副本表
     # db.create_vector_db("knowledge_base")
@@ -274,12 +295,12 @@ def main():
     # db.add_chat_message(db_name="history", session_id=sid, role="assistant", content="你好呀，我能帮你什么？")
 
     # 获取最新 20 条消息
-    msgs = db.get_chat_messages("history", 2, limit=20)
-    print("历史消息：", msgs)
-
+    # msgs = db.get_chat_messages("history", 2, limit=20)
+    # print("历史消息：", msgs)
+    # db.delete_chat_message("history","")
 #     # 获取所有会话
 #     sessions = db.get_sessions("session_table")
 #     print("会话列表：", sessions)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

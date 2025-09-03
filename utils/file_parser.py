@@ -5,10 +5,8 @@ from typing import List, Dict, Any, Union
 import re
 from typing import List, Dict, Any, Iterable, Set, Optional
 import numpy as np
-from PIL import Image
 from pdf2image import convert_from_path
 from paddleocr import PPStructureV3
-from sklearn.linear_model import PassiveAggressiveRegressor
 # https://www.paddlepaddle.org.cn/documentation/docs/zh/install/index_cn.html
 # GPUpaddle安装
 try:
@@ -18,43 +16,73 @@ except Exception:
     HAS_DOCX2PDF = False
 import os
 
+BASE = "./configs/official_models"
 
 pipeline = PPStructureV3(
-    device="gpu:2,3",
+    device="gpu:0",
+
+    # 开关保持你给的
     use_region_detection=True,
     use_table_recognition=True,
     use_formula_recognition=True,
-    use_chart_recognition= False,
-    use_doc_orientation_classify= False,
-    use_doc_unwarping = False,
-    use_textline_orientation = False,
-    use_seal_recognition = False,
-    # pdf_dpi = 300,
-    # linux
-    # poppler_path=None,
-    
+    use_chart_recognition=False,
+    use_doc_orientation_classify=False,
+    use_doc_unwarping=False,
+    use_textline_orientation=False,
+    use_seal_recognition=False,
+
+    # 版面 & 区域（layout 用 DocLayout_plus-L，region 用 DocBlockLayout）
+    layout_detection_model_name="PP-DocLayout_plus-L",
+    layout_detection_model_dir=f"{BASE}/PP-DocLayout_plus-L",
+    region_detection_model_name="PP-DocBlockLayout",
+    region_detection_model_dir=f"{BASE}/PP-DocBlockLayout",
+
+    # OCR（检测 + 识别）
+    text_detection_model_name="PP-OCRv5_server_det",
+    text_detection_model_dir=f"{BASE}/PP-OCRv5_server_det",
+    text_recognition_model_name="PP-OCRv5_server_rec",
+    text_recognition_model_dir=f"{BASE}/PP-OCRv5_server_rec",
+
+    # 可选分类器（先关着用也没事，路径先配好）
+    doc_orientation_classify_model_name="PP-LCNet_x1_0_doc_ori",
+    doc_orientation_classify_model_dir=f"{BASE}/PP-LCNet_x1_0_doc_ori",
+    textline_orientation_model_name="PP-LCNet_x1_0_textline_ori",
+    textline_orientation_model_dir=f"{BASE}/PP-LCNet_x1_0_textline_ori",
+
+    # 表格识别（分类 + 结构识别 + 单元格检测）
+    table_classification_model_name="PP-LCNet_x1_0_table_cls",
+    table_classification_model_dir=f"{BASE}/PP-LCNet_x1_0_table_cls",
+
+    wired_table_structure_recognition_model_name="SLANeXt_wired",
+    wired_table_structure_recognition_model_dir=f"{BASE}/SLANeXt_wired",
+    wireless_table_structure_recognition_model_name="SLANet_plus",
+    wireless_table_structure_recognition_model_dir=f"{BASE}/SLANet_plus",
+
+    wired_table_cells_detection_model_name="RT-DETR-L_wired_table_cell_det",
+    wired_table_cells_detection_model_dir=f"{BASE}/RT-DETR-L_wired_table_cell_det",
+    wireless_table_cells_detection_model_name="RT-DETR-L_wireless_table_cell_det",
+    wireless_table_cells_detection_model_dir=f"{BASE}/RT-DETR-L_wireless_table_cell_det",
+
+    # 公式 & 图表（你关了图表，但先把路径也配好）
+    formula_recognition_model_name="PP-FormulaNet_plus-L",
+    formula_recognition_model_dir=f"{BASE}/PP-FormulaNet_plus-L",
+    chart_recognition_model_name="PP-Chart2Table",
+    chart_recognition_model_dir=f"{BASE}/PP-Chart2Table",
 )
 
 class PPOCRMarkdownParser:
     def __init__(
         self,
-        paddlex_config: Union[str, None] = None,
-        device: str = "cpu",
-        use_region_detection: bool = True,
-        use_table_recognition: bool = True,
-        use_formula_recognition: bool = True,
-        use_chart_recognition: bool = False,
-        use_doc_orientation_classify: bool = False,
-        use_doc_unwarping: bool = False,
-        use_textline_orientation: bool = False,
-        use_seal_recognition: bool = False,
         pdf_dpi: int = 300,
-        poppler_path: Union[str, None] = None,   # ✅ 新增：指定 poppler 的 bin 路径（Windows）
+        # poppler_path: Union[str, None] = None,
+        # poppler_path="./poppler-25.07.0/Library/bin"
+        poppler_path= None
+
+
     ):
         self.pipeline = pipeline
         self.poppler_path = poppler_path
         self.pdf_dpi = pdf_dpi
-        
 
     # =============== 公共入口 ===============
     def to_markdown(self, file_path: Union[str, Path]) -> Dict[str, Any]:
@@ -63,61 +91,34 @@ class PPOCRMarkdownParser:
             raise FileNotFoundError(p)
         ext = p.suffix.lower()
 
+        # 1) 纯 markdown 直读
         if ext == ".md":
             text = p.read_text(encoding="utf-8", errors="ignore")
             return {"markdown": text, "pages": [text], "images": []}
 
+        # 2) 直接 PDF：用 PPStructureV3 解析
         if ext == ".pdf":
-            # ✅ PDF：渲染全部页为图片 → 统一走图片预测函数
-            pages = convert_from_path(str(p), dpi=self.pdf_dpi, poppler_path=self.poppler_path)
-            np_pages = [np.array(im) for im in pages]  # PIL -> ndarray
-            return self._images_to_markdown(np_pages)
+            return self._parse_pdf(p)
 
+        # 3) 常见图片：用 PPStructureV3 解析
         if ext in (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff", ".webp"):
-            # ✅ 单图：也走统一预测函数（传入 list，保持接口一致）
-            img = self._imread_unicode(p)  # ndarray (BGR)
-            img = img[:, :, ::-1]          # 转 RGB，和 PIL/np 一致（可选，按你的 pipeline 实测而定）
-            return self._images_to_markdown([img])
+            return self._parse_image(p)
 
+        # 4) DOCX：先转成 PDF，再用 PPStructureV3 解析 PDF
         if ext == ".docx":
-            # ✅ DOCX：先转 PDF，再同上
-            pdf_path = self._docx_to_pdf(p)
-            pages = convert_from_path(str(pdf_path), dpi=self.pdf_dpi, poppler_path=self.poppler_path)
-            np_pages = [np.array(im) for im in pages]
-            # 若是我们创建的临时 pdf，解析后清理
-            if pdf_path.name.endswith(".__tmp_ppocr__.pdf"):
-                try: pdf_path.unlink()
-                except Exception: pass
-            return self._images_to_markdown(np_pages)
+            pdf_path = self._docx_to_pdf(p)  # 生成临时/目标 PDF
+            try:
+                result = self._parse_pdf(pdf_path)
+            finally:
+                # 如果是我们创建的临时 PDF，则解析后删除，避免脏文件
+                if pdf_path.suffix == ".pdf" and pdf_path.name.endswith(".__tmp_ppocr__.pdf") and pdf_path.exists():
+                    try:
+                        pdf_path.unlink()
+                    except Exception:
+                        pass
+            return result
 
         raise ValueError(f"不支持的文件类型：{ext}（支持 docx / pdf / 常见图片 / md）")
-
-    # =============== 核心统一通路：多张图片 -> Markdown ===============
-    def _images_to_markdown(self, images_rgb: List[np.ndarray]) -> Dict[str, Any]:
-        """
-        接收一组 RGB ndarray（统一入口：图片、PDF页、DOCX转PDF页），
-        逐页送入 pipeline.predict，最终：
-        - pages: 每页 markdown 文本（markdown_text）
-        - markdown: pipeline.concatenate_markdown_pages 汇总文本
-        - images: 从每页结果的 markdown_images 聚合（如有）
-        """
-        md_objs: List[Dict[str, Any]] = []
-        page_texts: List[str] = []
-
-        for arr in images_rgb:
-            # PaddleOCR 大多对 RGB/ndarray 友好；若你的版本期望 BGR，可切换 arr[:, :, ::-1]
-            outs = self.pipeline.predict(arr)
-            for res in outs:
-                md = res.markdown  # dict: {"markdown_text": "...", "markdown_images": [...], ...}
-                md_objs.append(md)
-                page_texts.append(md.get("markdown_text", "") or "")
-
-        md_text = self.pipeline.concatenate_markdown_pages(md_objs)
-        return {
-            "markdown": md_text,
-            "pages": page_texts,
-            "images": self._collect_md_images(md_objs),
-        }
 
     # =============== 工具：DOCX -> PDF ===============
     def _docx_to_pdf(self, docx_path: Path) -> Path:
@@ -133,52 +134,43 @@ class PPOCRMarkdownParser:
         )
         return docx_path.with_suffix(".pdf")
 
-    # =============== 工具：中文路径读图（BGR） ===============
-    @staticmethod
-    def _imread_unicode(path: Path) -> np.ndarray:
-        import cv2
-        data = np.fromfile(str(path), dtype=np.uint8)
-        img = cv2.imdecode(data, cv2.IMREAD_COLOR)  # BGR
-        if img is None:
-            raise ValueError(f"无法读取图片：{path}")
-        return img
+    # =============== PDF 解析（核心） ===============
+    def _parse_pdf(self, pdf_path: Path) -> Dict[str, Any]:
+        outputs = self.pipeline.predict(str(pdf_path))
+        markdown_list = []
+        markdown_images = []
 
-    # =============== 工具：聚合 markdown_images ===============
-    @staticmethod
-    def _collect_md_images(md_objs: List[Dict[str, Any]]) -> List[str]:
-        links: List[str] = []
-        for md in md_objs:
-            imgs = md.get("markdown_images") or []
-            if isinstance(imgs, dict):
-                links.extend([str(v) for v in imgs.values()])
-            elif isinstance(imgs, (list, tuple)):
-                links.extend([str(x) for x in imgs])
-        # 去重保持顺序
-        seen, uniq = set(), []
-        for x in links:
-            if x not in seen:
-                seen.add(x)
-                uniq.append(x)
-        return uniq
-    
-    def md_split():
-        HEADING_RE = re.compile(r'^(#{1,4})\s+(.+?)\s*#*\s*$')  # 只匹配 #..####（最多4个#）
-        FENCE_OPEN_RE = re.compile(r'^([`~]{3,})(.*)$')         # ``` 或 ~~~ 开头的围栏代码块
+        for res in outputs:
+            md_info = res.markdown
+            markdown_list.append(md_info)
+            markdown_images.append(md_info.get("markdown_images", {}))
 
+        markdown_texts = pipeline.concatenate_markdown_pages(markdown_list)
+
+        return {"markdown": markdown_texts}
+
+    # =============== 图片 解析 ===============
+    def _parse_image(self, image_path: Path) -> Dict[str, Any]:
+        outputs = self.pipeline.predict(str(image_path))
+        markdown_list = []
+        for i in outputs:
+            markdown_list.append(i.markdown)
+        markdown_texts = pipeline.concatenate_markdown_pages(markdown_list)
+        # 图片大概率只有一个“页”结果，但为了稳妥按列表处理
+        return {"markdown": markdown_texts}
+
+    # =============== 兼容旧接口：PDF -> 纯文本 ===============
+    def pdf_to_texts(self, pdf_path: Union[str, Path]) -> str:
+        """保留旧函数名，返回拼接后的 markdown 文本字符串。"""
+        result = self._parse_pdf(Path(pdf_path))
+        return result["markdown"]
 
 
-
-
-
+# # # 用法示例：
 # if __name__ == "__main__":
-    # parser = PPOCRMarkdownParser(
-    # # 你也可以用 paddlex_config="PP-StructureV3.yaml" 全量控制加载地址
-    # device="cpu",
-    # # gpu:0,1,2,3）可实现多卡并行推理
-    # use_region_detection=True,
-    # use_table_recognition=True,
-    # use_formula_recognition=True,
-    # poppler_path="./poppler-25.07.0/Library/bin"
-    # )
-    # r3 = parser.to_markdown(r"C:\Users\Yy\Desktop\agent\chatchat\utils\你好.png")
-    # print(r3["markdown"])
+#     parser = PPOCRMarkdownParser(
+#         pdf_dpi=300,
+#         # poppler_path="./poppler-25.07.0/Library/bin"
+#     )
+#     r1 = parser.to_markdown(r"C:\Users\hello\Desktop\AI_Moku\chatchat\dataset\knowbase\files\0f8284c3-ddd8-4696-a673-4c267554ac54_1b6fd4c6f1d14e5fbdc5d7c26aaae57c_ff730f50ebd9414a9acb366e000c4a9a.png")
+#     print(r1["markdown"])
